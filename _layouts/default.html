@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    <div class="col-left">
+      {% include sidebar.html %}
+    </div>
+
+    <div class="main">
+      {% include header.html %}
+
+      {% for doc in site.docs %}
+        <section class="class-definition">
+          {{ doc.content }}
+        </section>
+      {% endfor %}
+
+      {% comment %} {{ content }} {% endcomment %}
+
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

@@ -1,0 +1,101 @@
+// MARKDOWN
+pre {
+  margin: 0;
+  // border: 1px solid $grey;
+  border-radius: 2px;
+  padding: 12px;
+  margin: 3px 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  font-size: 1.5rem;
+  font-family: $monospace;
+}
+
+code {
+  font-size: 1.5rem;
+  font-style: normal;
+}
+
+.class-definition {
+  padding: 14px 0;
+  border-bottom: 1px dotted $grey;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $serif;
+    position: relative;
+  }
+
+  // class name
+  h1 {
+    font-size: 2rem;
+    margin: 16px 0;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin: 14px 0;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    display: inline-block;
+
+    & + p {
+      display: inline-block;
+      margin: 0;
+      margin-left: 20px;
+    }
+  }
+
+  // style for the anchor
+  .anchor {
+    position: absolute;
+    width: 36px;
+    height: 100%;
+    top: 50%;
+    left: -36px;
+    margin-top: -7px;
+    background: url(./img/anchor-link.png) 0 1px no-repeat;
+    opacity: 0.4;
+  }
+
+  pre {
+    margin: 20px 0;
+  }
+
+  p {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    margin: 16px 0;
+    width: 70%;
+  }
+
+  p code {
+    padding: 1px 3px;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.035);
+  }
+
+  ul {
+    margin: 16px 0 16px 36px;
+
+    li p {
+      font-size: 1.2rem;
+      line-height: 1.7rem;
+      margin: 10px 0;
+
+      code {
+        display: inline-block;
+        margin-right: 12px;
+      }
+
+      em {
+        display: inline-block;
+        margin-left: 12px;
+      }
+    }
+  }
+}
