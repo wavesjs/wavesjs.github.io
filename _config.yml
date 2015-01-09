@@ -1,10 +1,10 @@
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+title: Waves.js
+email: waves@ircam.fr
+# description: > # this means to ignore newlines until "baseurl:"
+  # Write an awesome description for your new site here. You can edit this
+  # line in _config.yml. It will appear in your document head meta (for
+  # Google search results) and in your feed.xml site description.
 baseurl: "/waves/" # the subpath of your site, e.g. /blog/
 url: "ircam.github.io" # the base hostname & protocol for your site
 
@@ -12,5 +12,4 @@ url: "ircam.github.io" # the base hostname & protocol for your site
 markdown: kramdown
 
 collections:
- docs:
-  output: false
+ - docs
