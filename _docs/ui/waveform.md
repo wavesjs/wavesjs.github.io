@@ -47,7 +47,7 @@ var waveformLayer = waveform()
   .color('steelblue');
 
 // add the waveform layer to the timeline
-graph.layer(waveformLayer);
+graph.add(waveformLayer);
 // draw the timeline
 d3.select('#timeline').call(graph.draw);
 ~~~

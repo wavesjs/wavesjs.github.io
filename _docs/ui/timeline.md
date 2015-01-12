@@ -46,8 +46,13 @@ var graph = timeline()
 var segmentLayer = segment()
   .data(data);
 
+<<<<<<< HEAD
 // add the segment layer to the timeline
 graph.add(segmentLayer);
+=======
+// add the timeline layer to the timeline
+graph.add(timelineLayer);
+>>>>>>> 679f130bbe14c6ded0af2bf4d8e1ff827d201f81
 // draw the timeline
 d3.select('#timeline').call(graph.draw);
 ~~~

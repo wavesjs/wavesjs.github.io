@@ -5,7 +5,7 @@ api:
   - data
 ---
 
-# Title {#breakpoint}
+# breakpoint {#breakpoint}
 
 Introtext.
 
@@ -33,7 +33,7 @@ var graph = timeline()
 var breakpointLayer = breakpoint()
 
 // add the breakpoint layer to the timeline
-graph.layer(breakpointLayer);
+graph.add(breakpointLayer);
 // draw the timeline
 d3.select('#timeline').call(graph.draw);
 ~~~

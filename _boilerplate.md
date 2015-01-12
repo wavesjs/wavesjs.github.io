@@ -5,7 +5,7 @@ api:
   - data
 ---
 
-# Title {#ååå}
+# ååå {#ååå}
 
 Introtext.
 
@@ -33,7 +33,7 @@ var graph = timeline()
 var åååLayer = ååå()
 
 // add the ååå layer to the timeline
-graph.layer(åååLayer);
+graph.add(åååLayer);
 // draw the timeline
 d3.select('#timeline').call(graph.draw);
 ~~~

@@ -5,7 +5,7 @@ api:
   - data
 ---
 
-# Title {#segment}
+# segment {#segment}
 
 Introtext.
 
@@ -33,7 +33,7 @@ var graph = timeline()
 var segmentLayer = segment()
 
 // add the segment layer to the timeline
-graph.layer(segmentLayer);
+graph.add(segmentLayer);
 // draw the timeline
 d3.select('#timeline').call(graph.draw);
 ~~~

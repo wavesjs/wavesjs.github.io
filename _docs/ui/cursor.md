@@ -5,7 +5,7 @@ api:
   - data
 ---
 
-# Title {#cursor}
+# cursor {#cursor}
 
 Introtext.
 
@@ -33,7 +33,7 @@ var graph = timeline()
 var cursorLayer = cursor()
 
 // add the cursor layer to the timeline
-graph.layer(cursorLayer);
+graph.add(cursorLayer);
 // draw the timeline
 d3.select('#timeline').call(graph.draw);
 ~~~

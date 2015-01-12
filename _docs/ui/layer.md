@@ -5,7 +5,7 @@ api:
   - data
 ---
 
-# Title {#layer}
+# layer {#layer}
 
 Introtext.
 
@@ -33,7 +33,7 @@ var graph = timeline()
 var layerLayer = layer()
 
 // add the layer layer to the timeline
-graph.layer(layerLayer);
+graph.add(layerLayer);
 // draw the timeline
 d3.select('#timeline').call(graph.draw);
 ~~~
