@@ -2,12 +2,13 @@
 hash: layer
 category: ui
 api:
-  - param
   - params
+  - param
   - handleSelection
   - handleDrag
   - select
   - unselect
+  - each
 ---
 
 # Layer {#layer}
@@ -29,59 +30,64 @@ $ npm install ircam-rnd/layer
 
 If `object` is present sets the layer's parameters via the passed in `object`, otherwise returns the layer's internal parameters.  
 
-Available parameters :
+Shared parameters :
 
-* `yDomain` {Array} _Defaults to `[-1, 1]`_  
-  Sets the layer's scale's domain to the specified array of numbers.  
-  The array must contain two or more numbers.  
+* `nameAsIdAttribute` {Boolean} _Defaults to `false`_  
+  Use the name parameter of the created component to set the id attribute of the component's g element. Allow to easily match a specific group add css or specific logic
 
-~~~javascript
-var layer = layer()
-  .params({
-    yDomain: [0, 100],
-    renderingStrategy: 'svg',
-    // ...
-  });
-~~~ 
+* `opacity` {Float} _Defaults to `1`_  
+  Sets the opacity of the layer at it's group level  
 
+* `height` {Number} _Defaults to timeline's height_  
+  Sets the height of the component  
 
-### #params {#layer-params}
+* `top` {Number} _Defaults to 0_  
+  Sets the position of the component from the timeline's top boundarie. _in pixels_
 
-`.data([array{Buffer}])`
+* `yDomain` {Array} _Defaults to timeline's yDomain_  
+  Sets data domain in the y axis from the component perspective.
 
-If `array` is present sets the data to be rendered via the passed in `array`, otherwise returns the internal data `array`.
+* `selectedClass` {String} _Defaults to 'selected'_  
+  Sets the class used to mark selected items.
 
-
-### #data {#layer-data}
-
-`.data([array{Buffer}])`
-
-If `array` is present sets the data to be rendered via the passed in `array`, otherwise returns the internal data `array`.
+* `interactions` {Object} _Defaults to {}_  
+  Sets the interactions allowed on the components.  
+  `{ selectable: true|false, editable: true|false }`  
+  _warning: at that time, only segments and breakpoints supports edition_
 
 
-### #data {#layer-data}
+### #param {#layer-param}
 
-`.data([array{Buffer}])`
+`.param(key [, value])`
 
-If `array` is present sets the data to be rendered via the passed in `array`, otherwise returns the internal data `array`.
-
-
-### #data {#layer-data}
-
-`.data([array{Buffer}])`
-
-If `array` is present sets the data to be rendered via the passed in `array`, otherwise returns the internal data `array`.
+Sets one parameter, _cf._ `params` for a more in depth description of available parameters.
 
 
-### #data {#layer-data}
+### #handleSelection {#layer-handleSelection}
 
-`.data([array{Buffer}])`
+`.handleSelection(el, e)`
 
-If `array` is present sets the data to be rendered via the passed in `array`, otherwise returns the internal data `array`.
+Defines the logic performed to select an itm when a layer is configured as `selectable`. `el` is set to the clicked DOM element if the element is owned by the component or `null` otherwise.  
+Any application logic to handle more complex behavior (keyboard use, etc.) should be done overriding this method.
 
 
-### #data {#layer-data}
+### #handleDrag {#layer-handleDrag}
 
-`.data([array{Buffer}])`
+`.handleDrag(el, e)`
 
-If `array` is present sets the data to be rendered via the passed in `array`, otherwise returns the internal data `array`.
+Defines the logic performed to edit an item when a layer is configured as `selectable`. `el` is set to the clicked DOM element if the element is owned by the component or `null` otherwise. These method are very component specific and are implemented inside child classes of the Layer.  
+Any application logic to handle more complex behavior (keyboard use, etc.) should be done overriding this method.
+
+
+### #select {#layer-select}
+
+`.select(...els)`
+
+Adds the `selected` class to each given elements. Move the item at the end of the component's group to display it in front of others.
+
+
+### #unselected {#layer-unselected}
+
+`.unselect(...els)`
+
+Removes the `selected` class to each given elements.
