@@ -13,7 +13,7 @@
       {% include header.html %}
 
       {% for doc in site.docs %}
-        <section class="class-definition">
+        <section class="class-definition {{ doc.category }}">
           {{ doc.content }}
         </section>
       {% endfor %}

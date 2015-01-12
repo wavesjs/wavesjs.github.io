@@ -1,5 +1,6 @@
 ---
 hash: waveform
+category: ui
 api:
   - params
   - data

@@ -7,7 +7,7 @@ api:
 
 # Timeline {#timeline}
 
-Introtext.
+Use this module to create time based visualisations. The module is essentially a component manager written on top of [d3.js](http://d3js.org/), it doesn't accomplish much by itself as long as you don't pass it in some component to display.
 
 ~~~
 # to use as a standalone module
@@ -16,24 +16,38 @@ $ npm install ircam-rnd/timeline
 
 ## Example usage {#timeline-example-usage}
 
+This illustrates how to use the `timeline` with a [`segment` component](#segment).
+
 ~~~javascript
 // consume from the "waves" namespace or as a standalone module
 var timeline = (waves.timeline || require('timeline'));
 
 var d3 = require('d3');
-var timeline = require('timeline');
+var segment = require('segment');
+
+var data = [
+  [
+    start: 200,
+    duration: 200
+  ], [
+    start: 500,
+    duration: 300
+  ],
+  // ...
+];
 
 // create the graph
 var graph = timeline()
-//  .xDomain([0, buffer.duration])
+  .xDomain([0, 1000])
   .width(1000)
-  .height(150)
+  .height(150);
   
-// create the timeline layer
-var timelineLayer = timeline()
+// create the segment layer
+var segmentLayer = segment()
+  .data(data);
 
-// add the timeline layer to the timeline
-graph.layer(timelineLayer);
+// add the segment layer to the timeline
+graph.add(segmentLayer);
 // draw the timeline
 d3.select('#timeline').call(graph.draw);
 ~~~

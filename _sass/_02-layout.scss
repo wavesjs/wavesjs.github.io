@@ -26,6 +26,15 @@ a {
   }
 }
 
+p a {
+  text-decoration: underline;
+  color: $blue;
+
+  &:hover, &:focus {
+    color: lighten($blue, 5%);
+  }
+}
+
 // LAYOUT
 .github-lk {
   background: url(./img/github.png) 0 50% no-repeat;
@@ -126,7 +135,7 @@ $padding: 20px;
 
 .main #header {
   border-bottom: 1px solid $lightGrey;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   padding-bottom: 10px;
   position: relative;
 
@@ -157,6 +166,26 @@ $padding: 20px;
           text-decoration: none;
           background-color: lighten($lightBlue, 4%);
         }
+      }
+    }
+  }
+}
+
+.main #filters {
+  ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 3px;
+
+    a {
+      display: block;
+      padding: 2px 6px;
+      background-color: $lightGrey;
+      border-radius: 2px;
+
+      &:hover, &:active {
+        text-decoration: none;
+        background-color: lighten($lightGrey, 4%);
       }
     }
   }
