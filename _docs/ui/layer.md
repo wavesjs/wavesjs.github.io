@@ -66,6 +66,20 @@ Shared parameters :
 Sets one parameter, _cf._ `params` for a more in depth description of available parameters.
 
 
+### #update {#layer-update}
+
+`.update([array])`
+
+Prepares the DOM according to the d3's enter/update/remove pattern. If array is given, replace the internal data of the component.
+
+
+### #draw {#layer-draw}
+
+`.draw([el])`
+
+Updates the DOM with the actual values of the component's data. If `el` is defined, only the given element will be updated.
+
+
 ### #handleSelection {#layer-handleSelection}
 
 `.handleSelection(el, e)`
