@@ -92,12 +92,12 @@ code {
       line-height: 1.7rem;
       margin: 10px 0;
 
-      code {
+      code:first-of-type {
         display: inline-block;
         margin-right: 12px;
       }
 
-      em {
+      em:first-of-type {
         display: inline-block;
         margin-left: 12px;
       }

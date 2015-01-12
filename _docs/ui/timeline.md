@@ -23,7 +23,7 @@ $ npm install ircam-rnd/timeline
 
 ## Example usage {#timeline-example-usage}
 
-This illustrates how to use the `timeline` with a [`segment` component](#segment).
+This illustrates how to use the `timeline` with a [segment](#segment) component.
 
 ~~~javascript
 var {segment, timeline} = require('waves');

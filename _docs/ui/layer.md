@@ -40,11 +40,11 @@ Shared parameters :
   `{ selectable: true|false, editable: true|false }`  
   _warning: at that time, only segments and breakpoints supports edition_
 
-* `name` {String} _defaults to unique generated string_
+* `name` {String} _defaults to unique generated string_  
   Sets the name of the component
 
 * `nameAsIdAttribute` {Boolean} _Defaults to `false`_  
-  Use the name parameter of the created component to set the id attribute of the component's g element. Allow to easily match a specific group add css or specific logic
+  Use the `name` parameter of the created component to set the `id` attribute of the component's `g` element. Allow to easily match a specific group add css or specific logic
 
 * `opacity` {Float} _Defaults to `1`_  
   Sets the opacity of the layer at it's group level  
@@ -63,7 +63,7 @@ Shared parameters :
 
 `.param(key [, value])`
 
-Sets one parameter, _cf._ `params` for a more in depth description of available parameters.
+Sets one parameter, see [`params`](#layer-params) for a more in depth description of available parameters.
 
 
 ### #update {#layer-update}
