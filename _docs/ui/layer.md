@@ -2,40 +2,21 @@
 hash: layer
 category: ui
 api:
-  - data
+  - param
+  - params
+  - handleSelection
+  - handleDrag
+  - select
+  - unselect
 ---
 
-# layer {#layer}
+# Layer {#layer}
 
-Introtext.
+This module is the base class for all visualisation components. It exposes all shared behavior between components.
 
 ~~~
 # to use as a standalone module
 $ npm install ircam-rnd/layer
-~~~
-
-## Example usage {#layer-example-usage}
-
-~~~javascript
-// consume from the "waves" namespace or as a standalone module
-var layer = (waves.layer || require('layer'));
-
-var d3 = require('d3');
-var timeline = require('timeline');
-
-// create the graph
-var graph = timeline()
-//  .xDomain([0, buffer.duration])
-  .width(1000)
-  .height(150)
-  
-// create the layer layer
-var layerLayer = layer()
-
-// add the layer layer to the timeline
-graph.add(layerLayer);
-// draw the timeline
-d3.select('#timeline').call(graph.draw);
 ~~~
 
 
@@ -62,6 +43,41 @@ var layer = layer()
     // ...
   });
 ~~~ 
+
+
+### #params {#layer-params}
+
+`.data([array{Buffer}])`
+
+If `array` is present sets the data to be rendered via the passed in `array`, otherwise returns the internal data `array`.
+
+
+### #data {#layer-data}
+
+`.data([array{Buffer}])`
+
+If `array` is present sets the data to be rendered via the passed in `array`, otherwise returns the internal data `array`.
+
+
+### #data {#layer-data}
+
+`.data([array{Buffer}])`
+
+If `array` is present sets the data to be rendered via the passed in `array`, otherwise returns the internal data `array`.
+
+
+### #data {#layer-data}
+
+`.data([array{Buffer}])`
+
+If `array` is present sets the data to be rendered via the passed in `array`, otherwise returns the internal data `array`.
+
+
+### #data {#layer-data}
+
+`.data([array{Buffer}])`
+
+If `array` is present sets the data to be rendered via the passed in `array`, otherwise returns the internal data `array`.
 
 
 ### #data {#layer-data}

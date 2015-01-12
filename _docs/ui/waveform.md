@@ -96,7 +96,7 @@ If `array` is present sets the data to be rendered via the passed in `array`, ot
 
 ### #duration {#waveform-duration}
 
-`.duration([number])`
+`.duration([number])` _mandatory_
 
 If `number` is present sets the duration of the data to be rendered via the passed in `number`, otherwise returns the `number`.  
 _Must be specified in the same unit as the `timeline`'s xDomain._
@@ -104,7 +104,7 @@ _Must be specified in the same unit as the `timeline`'s xDomain._
 
 ### #sampleRate {#waveform-sampleRate}
 
-`.sampleRate([number])`   
+`.sampleRate([number])`   _mandatory_ 
 
 If `number` is present sets the sampleRate of the _`data`_ array via the passed in `number`, otherwise returns the `number`.
 
