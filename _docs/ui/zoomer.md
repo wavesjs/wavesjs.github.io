@@ -1,5 +1,6 @@
 ---
 hash: zoomer
+category: helpers
 api:
   - data
 ---

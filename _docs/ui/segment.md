@@ -1,5 +1,6 @@
 ---
 hash: segment
+category: ui
 api:
   - data
 ---

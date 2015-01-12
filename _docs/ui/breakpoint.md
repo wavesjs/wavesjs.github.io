@@ -1,5 +1,6 @@
 ---
 hash: breakpoint
+category: ui
 api:
   - data
 ---

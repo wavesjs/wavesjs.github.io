@@ -1,5 +1,6 @@
 ---
 hash: timeline
+category: ui
 api:
   - data
 ---

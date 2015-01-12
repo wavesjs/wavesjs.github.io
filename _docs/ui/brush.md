@@ -1,5 +1,6 @@
 ---
 hash: brush
+category: ui
 api:
   - data
 ---

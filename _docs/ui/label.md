@@ -1,5 +1,6 @@
 ---
 hash: label
+category: ui
 api:
   - data
 ---
