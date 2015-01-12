@@ -4,7 +4,7 @@ api:
   - data
 ---
 
-# Title {#timeline}
+# Timeline {#timeline}
 
 Introtext.
 
