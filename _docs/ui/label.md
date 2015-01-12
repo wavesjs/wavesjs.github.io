@@ -17,20 +17,17 @@ $ npm install ircam-rnd/label
 ## Example usage {#label-example-usage}
 
 ~~~javascript
-// consume from the "waves" namespace or as a standalone module
-var label = (waves.label || require('label'));
-
-var d3 = require('d3');
-var timeline = require('timeline');
+var {label, timeline} = require('waves');
+var d3 = timeline.d3 // or require('d3');
 
 // create the graph
 var graph = timeline()
 //  .xDomain([0, buffer.duration])
   .width(1000)
-  .height(150)
+  .height(150);
   
 // create the label layer
-var labelLayer = label()
+var labelLayer = label();
 
 // add the label layer to the timeline
 graph.add(labelLayer);

@@ -5,9 +5,10 @@ api:
   - data
 ---
 
-# segment {#segment}
+# Segment {#segment}
 
-Introtext.
+Use this module to visualise or edit data segments over a shared timeline.  
+_The module relies on a [timeline](#timeline) instance._
 
 ~~~
 # to use as a standalone module
@@ -17,20 +18,17 @@ $ npm install ircam-rnd/segment
 ## Example usage {#segment-example-usage}
 
 ~~~javascript
-// consume from the "waves" namespace or as a standalone module
-var segment = (waves.segment || require('segment'));
-
-var d3 = require('d3');
-var timeline = require('timeline');
+var {segment, timeline} = require('waves');
+var d3 = timeline.d3 // or require('d3');
 
 // create the graph
 var graph = timeline()
 //  .xDomain([0, buffer.duration])
   .width(1000)
-  .height(150)
+  .height(150);
   
 // create the segment layer
-var segmentLayer = segment()
+var segmentLayer = segment();
 
 // add the segment layer to the timeline
 graph.add(segmentLayer);

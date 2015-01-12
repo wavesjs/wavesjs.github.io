@@ -17,20 +17,17 @@ $ npm install ircam-rnd/breakpoint
 ## Example usage {#breakpoint-example-usage}
 
 ~~~javascript
-// consume from the "waves" namespace or as a standalone module
-var breakpoint = (waves.breakpoint || require('breakpoint'));
-
-var d3 = require('d3');
-var timeline = require('timeline');
+var {breakpoint, timeline} = require('waves');
+var d3 = timeline.d3 // or require('d3');
 
 // create the graph
 var graph = timeline()
 //  .xDomain([0, buffer.duration])
   .width(1000)
-  .height(150)
+  .height(150);
   
 // create the breakpoint layer
-var breakpointLayer = breakpoint()
+var breakpointLayer = breakpoint();
 
 // add the breakpoint layer to the timeline
 graph.add(breakpointLayer);
