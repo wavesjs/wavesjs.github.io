@@ -1,23 +1,23 @@
 ---
-hash: timeline
+hash: cursor
 api:
   - data
 ---
 
-# Title {#timeline}
+# Title {#cursor}
 
 Introtext.
 
 ~~~
 # to use as a standalone module
-$ npm install ircam-rnd/timeline
+$ npm install ircam-rnd/cursor
 ~~~
 
-## Example usage {#timeline-example-usage}
+## Example usage {#cursor-example-usage}
 
 ~~~javascript
 // consume from the "waves" namespace or as a standalone module
-var timeline = (waves.timeline || require('timeline'));
+var cursor = (waves.cursor || require('cursor'));
 
 var d3 = require('d3');
 var timeline = require('timeline');
@@ -28,20 +28,20 @@ var graph = timeline()
   .width(1000)
   .height(150)
   
-// create the timeline layer
-var timelineLayer = timeline()
+// create the cursor layer
+var cursorLayer = cursor()
 
-// add the timeline layer to the timeline
-graph.layer(timelineLayer);
+// add the cursor layer to the timeline
+graph.layer(cursorLayer);
 // draw the timeline
 d3.select('#timeline').call(graph.draw);
 ~~~
 
 
-## Public API {#timeline-public-api}
+## Public API {#cursor-public-api}
 
 
-### #params {#timeline-params}
+### #params {#cursor-params}
 
 `.params([object])`
 
@@ -54,7 +54,7 @@ Available parameters :
   The array must contain two or more numbers.  
 
 ~~~javascript
-var layer = timeline()
+var layer = cursor()
   .params({
     yDomain: [0, 100],
     renderingStrategy: 'svg',
@@ -63,7 +63,7 @@ var layer = timeline()
 ~~~ 
 
 
-### #data {#timeline-data}
+### #data {#cursor-data}
 
 `.data([array{Buffer}])`
 

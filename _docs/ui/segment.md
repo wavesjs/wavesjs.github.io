@@ -1,23 +1,23 @@
 ---
-hash: timeline
+hash: segment
 api:
   - data
 ---
 
-# Title {#timeline}
+# Title {#segment}
 
 Introtext.
 
 ~~~
 # to use as a standalone module
-$ npm install ircam-rnd/timeline
+$ npm install ircam-rnd/segment
 ~~~
 
-## Example usage {#timeline-example-usage}
+## Example usage {#segment-example-usage}
 
 ~~~javascript
 // consume from the "waves" namespace or as a standalone module
-var timeline = (waves.timeline || require('timeline'));
+var segment = (waves.segment || require('segment'));
 
 var d3 = require('d3');
 var timeline = require('timeline');
@@ -28,20 +28,20 @@ var graph = timeline()
   .width(1000)
   .height(150)
   
-// create the timeline layer
-var timelineLayer = timeline()
+// create the segment layer
+var segmentLayer = segment()
 
-// add the timeline layer to the timeline
-graph.layer(timelineLayer);
+// add the segment layer to the timeline
+graph.layer(segmentLayer);
 // draw the timeline
 d3.select('#timeline').call(graph.draw);
 ~~~
 
 
-## Public API {#timeline-public-api}
+## Public API {#segment-public-api}
 
 
-### #params {#timeline-params}
+### #params {#segment-params}
 
 `.params([object])`
 
@@ -54,7 +54,7 @@ Available parameters :
   The array must contain two or more numbers.  
 
 ~~~javascript
-var layer = timeline()
+var layer = segment()
   .params({
     yDomain: [0, 100],
     renderingStrategy: 'svg',
@@ -63,7 +63,7 @@ var layer = timeline()
 ~~~ 
 
 
-### #data {#timeline-data}
+### #data {#segment-data}
 
 `.data([array{Buffer}])`
 

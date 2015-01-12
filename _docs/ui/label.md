@@ -1,23 +1,23 @@
 ---
-hash: timeline
+hash: label
 api:
   - data
 ---
 
-# Title {#timeline}
+# Title {#label}
 
 Introtext.
 
 ~~~
 # to use as a standalone module
-$ npm install ircam-rnd/timeline
+$ npm install ircam-rnd/label
 ~~~
 
-## Example usage {#timeline-example-usage}
+## Example usage {#label-example-usage}
 
 ~~~javascript
 // consume from the "waves" namespace or as a standalone module
-var timeline = (waves.timeline || require('timeline'));
+var label = (waves.label || require('label'));
 
 var d3 = require('d3');
 var timeline = require('timeline');
@@ -28,20 +28,20 @@ var graph = timeline()
   .width(1000)
   .height(150)
   
-// create the timeline layer
-var timelineLayer = timeline()
+// create the label layer
+var labelLayer = label()
 
-// add the timeline layer to the timeline
-graph.layer(timelineLayer);
+// add the label layer to the timeline
+graph.layer(labelLayer);
 // draw the timeline
 d3.select('#timeline').call(graph.draw);
 ~~~
 
 
-## Public API {#timeline-public-api}
+## Public API {#label-public-api}
 
 
-### #params {#timeline-params}
+### #params {#label-params}
 
 `.params([object])`
 
@@ -54,7 +54,7 @@ Available parameters :
   The array must contain two or more numbers.  
 
 ~~~javascript
-var layer = timeline()
+var layer = label()
   .params({
     yDomain: [0, 100],
     renderingStrategy: 'svg',
@@ -63,7 +63,7 @@ var layer = timeline()
 ~~~ 
 
 
-### #data {#timeline-data}
+### #data {#label-data}
 
 `.data([array{Buffer}])`
 

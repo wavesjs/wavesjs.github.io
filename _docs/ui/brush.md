@@ -1,23 +1,23 @@
 ---
-hash: timeline
+hash: brush
 api:
   - data
 ---
 
-# Title {#timeline}
+# Title {#brush}
 
 Introtext.
 
 ~~~
 # to use as a standalone module
-$ npm install ircam-rnd/timeline
+$ npm install ircam-rnd/brush
 ~~~
 
-## Example usage {#timeline-example-usage}
+## Example usage {#brush-example-usage}
 
 ~~~javascript
 // consume from the "waves" namespace or as a standalone module
-var timeline = (waves.timeline || require('timeline'));
+var brush = (waves.brush || require('brush'));
 
 var d3 = require('d3');
 var timeline = require('timeline');
@@ -28,20 +28,20 @@ var graph = timeline()
   .width(1000)
   .height(150)
   
-// create the timeline layer
-var timelineLayer = timeline()
+// create the brush layer
+var brushLayer = brush()
 
-// add the timeline layer to the timeline
-graph.layer(timelineLayer);
+// add the brush layer to the timeline
+graph.layer(brushLayer);
 // draw the timeline
 d3.select('#timeline').call(graph.draw);
 ~~~
 
 
-## Public API {#timeline-public-api}
+## Public API {#brush-public-api}
 
 
-### #params {#timeline-params}
+### #params {#brush-params}
 
 `.params([object])`
 
@@ -54,7 +54,7 @@ Available parameters :
   The array must contain two or more numbers.  
 
 ~~~javascript
-var layer = timeline()
+var layer = brush()
   .params({
     yDomain: [0, 100],
     renderingStrategy: 'svg',
@@ -63,7 +63,7 @@ var layer = timeline()
 ~~~ 
 
 
-### #data {#timeline-data}
+### #data {#brush-data}
 
 `.data([array{Buffer}])`
 
