@@ -5,7 +5,7 @@ api:
   - data
 ---
 
-# Title {#zoomer}
+# zoomer {#zoomer}
 
 Introtext.
 
@@ -33,7 +33,7 @@ var graph = timeline()
 var zoomerLayer = zoomer()
 
 // add the zoomer layer to the timeline
-graph.layer(zoomerLayer);
+graph.add(zoomerLayer);
 // draw the timeline
 d3.select('#timeline').call(graph.draw);
 ~~~
