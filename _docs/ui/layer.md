@@ -1,5 +1,6 @@
 ---
 hash: layer
+category: ui
 api:
   - data
 ---

@@ -1,5 +1,6 @@
 ---
 hash: cursor
+category: ui
 api:
   - data
 ---
