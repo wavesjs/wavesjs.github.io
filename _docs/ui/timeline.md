@@ -26,11 +26,8 @@ $ npm install ircam-rnd/timeline
 This illustrates how to use the `timeline` with a [`segment` component](#segment).
 
 ~~~javascript
-// consume from the "waves" namespace or as a standalone module
-var timeline = (waves.timeline || require('timeline'));
-
-var d3 = require('d3');
-var segment = require('segment');
+var {segment, timeline} = require('waves');
+var d3 = timeline.d3 // or require('d3');
 
 // some data to display
 var data = [

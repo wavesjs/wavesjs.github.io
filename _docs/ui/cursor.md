@@ -17,20 +17,17 @@ $ npm install ircam-rnd/cursor
 ## Example usage {#cursor-example-usage}
 
 ~~~javascript
-// consume from the "waves" namespace or as a standalone module
-var cursor = (waves.cursor || require('cursor'));
-
-var d3 = require('d3');
-var timeline = require('timeline');
+var {cursor, timeline} = require('waves');
+var d3 = timeline.d3 // or require('d3');
 
 // create the graph
 var graph = timeline()
 //  .xDomain([0, buffer.duration])
   .width(1000)
-  .height(150)
+  .height(150);
   
 // create the cursor layer
-var cursorLayer = cursor()
+var cursorLayer = cursor();
 
 // add the cursor layer to the timeline
 graph.add(cursorLayer);

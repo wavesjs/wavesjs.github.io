@@ -17,20 +17,18 @@ $ npm install ircam-rnd/brush
 ## Example usage {#brush-example-usage}
 
 ~~~javascript
-// consume from the "waves" namespace or as a standalone module
-var brush = (waves.brush || require('brush'));
+var {brush, timeline} = require('waves');
+var d3 = timeline.d3 // or require('d3');
 
-var d3 = require('d3');
-var timeline = require('timeline');
 
 // create the graph
 var graph = timeline()
 //  .xDomain([0, buffer.duration])
   .width(1000)
-  .height(150)
+  .height(150);
   
 // create the brush layer
-var brushLayer = brush()
+var brushLayer = brush();
 
 // add the brush layer to the timeline
 graph.add(brushLayer);

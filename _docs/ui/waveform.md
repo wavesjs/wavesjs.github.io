@@ -24,18 +24,16 @@ $ npm install ircam-rnd/waveform
 ## Example usage {#waveform-example-usage}
 
 ~~~javascript
-// consume from the "waves" namespace or as a standalone module
-var waveform = (waves.waveform || require('waveform'));
+var {waveform, timeline} = require('waves');
+var d3 = timeline.d3 // or require('d3');
 
-var d3 = require('d3');
-var timeline = require('timeline');
 var buffer = someAudioBuffer;
 
 // create the graph
 var graph = timeline()
   .xDomain([0, buffer.duration])
   .width(1000)
-  .height(150)
+  .height(150);
   
 // create the waveform layer
 var waveformLayer = waveform()

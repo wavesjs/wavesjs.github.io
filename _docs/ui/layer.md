@@ -32,28 +32,31 @@ If `object` is present sets the layer's parameters via the passed in `object`, o
 
 Shared parameters :
 
+* `height` {Number} _Defaults to timeline's height_  
+  Sets the height of the component  
+
+* `interactions` {Object} _Defaults to {}_  
+  Sets the interactions allowed on the components.  
+  `{ selectable: true|false, editable: true|false }`  
+  _warning: at that time, only segments and breakpoints supports edition_
+
+* `name` {String} _defaults to unique generated string_
+  Sets the name of the component
+
 * `nameAsIdAttribute` {Boolean} _Defaults to `false`_  
   Use the name parameter of the created component to set the id attribute of the component's g element. Allow to easily match a specific group add css or specific logic
 
 * `opacity` {Float} _Defaults to `1`_  
   Sets the opacity of the layer at it's group level  
 
-* `height` {Number} _Defaults to timeline's height_  
-  Sets the height of the component  
+* `selectedClass` {String} _Defaults to 'selected'_  
+  Sets the class used to mark selected items.
 
 * `top` {Number} _Defaults to 0_  
   Sets the position (_in pixels_) of the component's group from the timeline's top boundary.
 
 * `yDomain` {Array} _Defaults to timeline's yDomain_  
   Sets data domain in the y axis from the component perspective.
-
-* `selectedClass` {String} _Defaults to 'selected'_  
-  Sets the class used to mark selected items.
-
-* `interactions` {Object} _Defaults to {}_  
-  Sets the interactions allowed on the components.  
-  `{ selectable: true|false, editable: true|false }`  
-  _warning: at that time, only segments and breakpoints supports edition_
 
 
 ### #param {#layer-param}
@@ -86,7 +89,7 @@ _Any application logic to handle more complex behavior (keyboard use, etc.) shou
 Adds the `selected` class to each given elements and moves the item at the end of the component's group to display it in front of others.
 
 
-### #unselected {#layer-unselected}
+### #unselect {#layer-unselected}
 
 `.unselect(...els)`
 

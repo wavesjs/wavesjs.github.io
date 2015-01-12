@@ -28,11 +28,8 @@ $ npm install ircam-rnd/label
 ## Example usage {#label-example-usage}
 
 ~~~javascript
-// consume from the "waves" namespace or as a standalone module
-var label = (waves.label || require('label'));
-
-var d3 = require('d3');
-var timeline = require('timeline');
+var {label, timeline} = require('waves');
+var d3 = timeline.d3 // or require('d3');
 
 var data = [{
   text: 'text 1',
@@ -52,6 +49,7 @@ var data = [{
 
 // create the graph
 var graph = timeline()
+<<<<<<< HEAD
   .xDomain([0, 400])
   .width(400)
   .height(30)
@@ -78,18 +76,8 @@ If `object` is present sets the layer's parameters via the passed in `object`, o
 
 Available parameters :
 
-* `yDomain` {Array} _Defaults to `[-1, 1]`_  
-  Sets the layer's scale's domain to the specified array of numbers.  
-  The array must contain two or more numbers.  
-
-~~~javascript
-var layer = label()
-  .params({
-    yDomain: [0, 100],
-    renderingStrategy: 'svg',
-    // ...
-  });
-~~~ 
+* `verticalAlignment` {Array} _Defaults to `{ top: '1em', middle: '0.5em', bottom: '0' }`_  
+  Sets values used for vertical alignement. Can be use to tweak vertical alignments for design adjustments
 
 
 ### #data {#label-data}
@@ -103,22 +91,77 @@ If `array` is present sets the data to be rendered via the passed in `array`, ot
 
 `.x([func|number])`
 
-If a function is passed in, the function will be used to access the corresponding property in the `data`. Acts as a mapper between the application data and the internal representation needed by the component. The given function receive the corresponding datum as first arguments, if the key maps to an attribute that is editable, 
+If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the `x` position of the label. If a value is provided, it will be used as a constant for all datums instead.  
+_for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
-~~~
-this.y(function(d, v = null) {
-  if (v === null) { return +d.y || 0 }
-  d.y = (+v);
-});
-~~~
 
 ### #y {#label-y} 
+
+`.y([func|number])`
+
+If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the `y` position of the label. If a value is provided, it will be used as a constant for all datums instead.  
+_for more information about this type of accessors, refer to the [accessors](#accessors) section_
+
+
 ### #text {#label-text} 
+
+`.y([func|string])`
+
+If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the text of the label. If a value is provided, it will be used as a constant for all datums instead.  
+_for more information about this type of accessors, refer to the [accessors](#accessors) section_
+
+
 ### #bgColor {#label-bgColor} 
+
+`.y([func|string])`
+
+If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the background color of the label. If a value is provided, it will be used as a constant for all datums instead.  
+_for more information about this type of accessors, refer to the [accessors](#accessors) section_
+
+
 ### #width {#label-width} 
+
+`.y([func|number])`
+
+If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the width of the label. If a value is provided, it will be used as a constant for all datums instead.  
+_for more information about this type of accessors, refer to the [accessors](#accessors) section_
+
+
 ### #height {#label-height} 
-### #color {#label-color} 
+
+`.y([func|number])`
+
+If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the height of the label. If a value is provided, it will be used as a constant for all datums instead.  
+_for more information about this type of accessors, refer to the [accessors](#accessors) section_
+
+
+### #color {#label-color}
+
+`.y([func|string])`
+
+If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the color of the label. If a value is provided, it will be used as a constant for all datums instead.  
+_for more information about this type of accessors, refer to the [accessors](#accessors) section_
+
+
 ### #align {#label-align} 
+
+`.y([func|'left'|'center'|'right'])`
+
+If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the horizontal alignment of the text of the label. If a value is provided, it will be used as a constant for all datums instead.  
+_for more information about this type of accessors, refer to the [accessors](#accessors) section_
+
+
 ### #valign {#label-valign} 
+
+`.y([func|'top'|'middle'|'bottom'])`
+
+If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the vertical alignment of the text of the label. If a value is provided, it will be used as a constant for all datums instead.
+_for more information about this type of accessors, refer to the [accessors](#accessors) section_
+
+
 ### #update {#label-update} 
+
+
+
+
 ### #draw {#label-draw} 
