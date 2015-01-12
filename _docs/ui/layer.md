@@ -42,7 +42,7 @@ Shared parameters :
   Sets the height of the component  
 
 * `top` {Number} _Defaults to 0_  
-  Sets the position of the component from the timeline's top boundarie. _in pixels_
+  Sets the position (_in pixels_) of the component's group from the timeline's top boundary.
 
 * `yDomain` {Array} _Defaults to timeline's yDomain_  
   Sets data domain in the y axis from the component perspective.
@@ -67,8 +67,8 @@ Sets one parameter, _cf._ `params` for a more in depth description of available 
 
 `.handleSelection(el, e)`
 
-Defines the logic performed to select an itm when a layer is configured as `selectable`. `el` is set to the clicked DOM element if the element is owned by the component or `null` otherwise.  
-Any application logic to handle more complex behavior (keyboard use, etc.) should be done overriding this method.
+Defines the logic performed to select an item when a layer is configured as `selectable`. `el` is set to the clicked DOM element if the element is owned by the component or `null` otherwise.  
+_Any application logic to handle more complex behavior (keyboard use, etc.) should be done overriding this method._
 
 
 ### #handleDrag {#layer-handleDrag}
@@ -76,14 +76,14 @@ Any application logic to handle more complex behavior (keyboard use, etc.) shoul
 `.handleDrag(el, e)`
 
 Defines the logic performed to edit an item when a layer is configured as `selectable`. `el` is set to the clicked DOM element if the element is owned by the component or `null` otherwise. These method are very component specific and are implemented inside child classes of the Layer.  
-Any application logic to handle more complex behavior (keyboard use, etc.) should be done overriding this method.
+_Any application logic to handle more complex behavior (keyboard use, etc.) should be done overriding this method._
 
 
 ### #select {#layer-select}
 
 `.select(...els)`
 
-Adds the `selected` class to each given elements. Move the item at the end of the component's group to display it in front of others.
+Adds the `selected` class to each given elements and moves the item at the end of the component's group to display it in front of others.
 
 
 ### #unselected {#layer-unselected}
