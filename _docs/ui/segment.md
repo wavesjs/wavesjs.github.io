@@ -1,5 +1,4 @@
 ---
-category: ui  
 ---
 
 # Segment
