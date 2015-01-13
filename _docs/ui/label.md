@@ -49,7 +49,6 @@ var data = [{
 
 // create the graph
 var graph = timeline()
-<<<<<<< HEAD
   .xDomain([0, 400])
   .width(400)
   .height(30)
@@ -67,7 +66,6 @@ d3.select('#timeline').call(graph.draw);
 
 ## Public API {#label-public-api}
 
-
 ### #params {#label-params}
 
 `.params([object])`
@@ -83,6 +81,8 @@ Available parameters :
 ### #data {#label-data}
 
 `.data([array{Buffer}])`
+
+`.data(`
 
 If `array` is present sets the data to be rendered via the passed in `array`, otherwise returns the internal data `array`.
 
