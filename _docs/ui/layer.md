@@ -103,8 +103,14 @@ _Any application logic to handle more complex behavior (keyboard use, etc.) shou
 Adds the `selected` class to each given elements and moves the item at the end of the component's group to display it in front of others.
 
 
-### #unselect {#layer-unselected}
+### #unselect {#layer-unselect}
 
 `.unselect(...els)`
 
 Removes the `selected` class to each given elements.
+
+### #each {#layer-each}
+
+`.each(function)`
+
+D3 like each.
