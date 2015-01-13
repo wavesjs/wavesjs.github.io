@@ -82,8 +82,6 @@ Available parameters :
 
 `.data([array{Buffer}])`
 
-`.data(`
-
 If `array` is present sets the data to be rendered via the passed in `array`, otherwise returns the internal data `array`.
 
 
