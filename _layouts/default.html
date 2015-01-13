@@ -13,7 +13,10 @@
       {% include header.html %}
 
       {% for doc in site.docs %}
-        <section class="class-definition {{ doc.category }}">
+      {% assign p = doc.relative_path | split:"/" %}
+      {% assign category = p[1] %}
+      
+        <section class="class-definition {{ category }}">
           {{ doc.content }}
         </section>
       {% endfor %}
