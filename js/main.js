@@ -1,94 +1,127 @@
+'use strict';
 // menu
-(function() {
-  var pluginName = 'accordion';
-
-  var Plugin = function($el) {
-    this.$el = $el;
-    this.$subNav = this.$el.find('ul');
-    this.$links = this.$el.find('.lk');
-    this.delegateEvents();
-  };
-
-  Plugin.prototype.delegateEvents = function() {
-    this.$links.on('click', $.proxy(this.onClick, this));
-  };
-
-  Plugin.prototype.onClick = function(e) {
-    this.toggle(this.$links.filter(e.target));
-  };
-
-  Plugin.prototype.toggle = function($el) {
-    if ($el.hasClass('active')) {
-      return this.closeAll();
-    }
-
-    this.closeAll();
-    $el.addClass('active')
-       .next('ul').slideDown(100);
-  };
-
-  Plugin.prototype.closeAll = function() {
-    this.$subNav.slideUp(100);
-    this.$links.removeClass('active');
-  };
-
-  $.fn[pluginName] = function() {
-    return this.each(function(index, el) {
-      var $el = $(this);
-
-      if (!$el.data(pluginName + '-plugin')) {
-        $el.data(pluginName + '-plugin', new Plugin($el));
-      }
-    });
+var DocModel = Backbone.Model.extend({
+  // attributes
+  initialize: function() {
+    this.set('properties', []);
   }
-}());
+});
 
-// anchors
-(function() {
-  var pluginName = 'createAnchor';
+var DocCollection = Backbone.Collection.extend({
+  initialize: function() {
+    this.categories = [];
 
-  var Plugin = function($el) {
-    this.$el = $el;
-    this.$anchor = null;
-
-    this.createAnchor();
-    this.delegateEvents();
-  };
-
-  Plugin.prototype.createAnchor = function() {
-    var hash = '#' + this.$el.attr('id');
-    this.$anchor = $('<a>', { 'href': hash, 'class': 'anchor' });
-  };
-
-  Plugin.prototype.delegateEvents = function() {
-    this.$el.on('mouseenter', $.proxy(this.onMouseEnter, this));
-    this.$el.on('mouseleave', $.proxy(this.onMouseLeave, this));
-  };
-
-  Plugin.prototype.onMouseEnter = function() {
-    this.$el.prepend(this.$anchor);
-  };
-
-  Plugin.prototype.onMouseLeave = function() {
-    this.$anchor.remove();
-  };
-
-  $.fn[pluginName] = function() {
-    return this.each(function(index, el) {
-      var $el = $(this);
-
-      if (!$el.data(pluginName + '-plugin') && $el.attr('id')) {
-        $el.data(pluginName + '-plugin', new Plugin($el));
-      }
-    });
+    this.on('add', function(model) {
+      this.categories.push(model.get('category'));
+      this.categories = _.uniq(this.categories);
+    }, this);
   }
-}());
+});
 
+var DocView = Backbone.View.extend({
+  initialize: function() {
+    this.model = new DocModel();
+
+    this.parseHtml();
+  },
+
+  parseHtml: function() {
+    // get category
+    this.model.set('category', this.$el.attr('data-category'));
+    // prefix all title ids - and build model
+    var selector = ['h1', 'h2', 'h3'];
+    var type, inherited;
+
+    this.$(selector.join(', ')).each(_.bind(function(index, el) {
+      var text = el.innerHTML.replace(/<code>.*<\/code>/, '');
+      text = text.replace('.', '');
+      text = _.string.trim(text);
+      var slugyfied = _.string.slugify(text);
+      var id = [this.model.get('category'), slugyfied].join('-');
+
+      // get names
+      if (el.tagName === 'H1') {
+        this.model.set('name', text);
+        this.model.set('hash', id);
+      }
+
+      // get property meta-data
+      if (el.tagName === 'H2') {
+        // update properties metadata
+        inherited = /inherited/.test(slugyfied);
+        type = /methods/.test(slugyfied) ? 'method' :
+          /attributes/.test(slugyfied) ? 'attribute' : null;
+      }
+
+      // create property object
+      if (el.tagName === 'H3') {
+        var prop = { inherited: inherited, type: type, name: text, hash: id };
+        this.model.get('properties').push(prop);
+      }
+
+      // replce id for link
+      el.setAttribute('id', id);
+    }, this));
+
+  },
+
+  render: function() {
+
+  }
+});
+
+var DocMenu = Backbone.View.extend({
+  tagName: 'ul',
+
+  docTemplate:
+    ['<ul><li>',
+      '<a class="lk" href="#<%= hash %>"><%= name %></a>',
+      '<ul>',
+      '<% for (index in properties) { %>',
+        '<% var property = properties[index]; %>',
+        '<li><a href="#<%= property.hash %>"><%= property.name %></a></li>',
+      '<% } %>',
+      '</ul>',
+    '</li></ul>'].join(''),
+
+  initialize: function() {
+    console.log(this.collection.categories);
+
+  },
+
+  render: function() {
+    _.each(this.collection.categories, function(category) {
+      var h2 = $('<h2>').text(category);
+      var relatedDocs = this.collection.where({ category: category });
+
+      this.$el.append(h2);
+
+      _.each(relatedDocs, function(doc) {
+        var ul = _.template(this.docTemplate)(doc.toJSON());
+        this.$el.append(ul);
+      }, this);
+    }, this)
+
+    return this;
+  }
+});
 
 $(document).ready(function() {
-  // init menu
-  $('#secondary-nav > ul').accordion();
-  // create anchors
-  var selectors = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
-  $(selectors.join(', ')).createAnchor();
+  var collection = new DocCollection();
+  var views = [];
+  // parse class-definition sections to return
+  $('.class-definition').each(function(index, el) {
+    var view = new DocView({ el: el });
+    collection.add(view.model);
+    views.push(view);
+  });
+
+  var menu = new DocMenu({ collection: collection });
+  $('#secondary-nav').append(menu.render().el);
+
+  // // init menu
+  // $('#secondary-nav > ul').accordion();
+  // // create anchors
+  // var selectors = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+  // $(selectors.join(', ')).createAnchor();
 });

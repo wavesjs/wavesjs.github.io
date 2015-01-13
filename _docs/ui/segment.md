@@ -149,7 +149,7 @@ If `number` is present sets the height of the segment via the passed in `number`
 Moves a given `element` by the number of pixels specified by the `deltaX` and `deltaY` numbers.
 
 
-### .resizeLeft {#segment-resizeLeft} `(element:DOMNode, deltaX:Number, deltaY:Number)`
+### .resizeLeft `(element:DOMNode, deltaX:Number, deltaY:Number)`
 
 Resizes a given `element` on his left side by a number of pixels specified by the `deltaX` and `deltaY` numbers.
 

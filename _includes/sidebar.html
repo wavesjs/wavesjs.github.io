@@ -6,17 +6,6 @@
   <pre><code>$ bower install waves</code></pre>
 </section>
 <nav id="secondary-nav">
-  <ul>
-  {% for doc in site.docs %}
-    <li>
-      <a class="lk" href="#{{ doc.hash }}">{{ doc.hash }}</a>
-      <ul>
-      {% for api in doc.api %}
-        <li><a href="#{{ doc.hash }}-{{ api }}">{{ api }}</a></li>
-      {% endfor %}
-      </ul>
-    </li>
-  {% endfor %}
-  </ul>
+
 </nav>
 

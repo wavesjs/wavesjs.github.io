@@ -15,8 +15,8 @@
       {% for doc in site.docs %}
       {% assign p = doc.relative_path | split:"/" %}
       {% assign category = p[1] %}
-      
-        <section class="class-definition {{ category }}">
+
+        <section class="class-definition {{ category }}" data-category="{{ category }}">
           {{ doc.content }}
         </section>
       {% endfor %}
