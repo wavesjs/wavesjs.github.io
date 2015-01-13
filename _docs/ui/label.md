@@ -91,7 +91,7 @@ If `array` is present sets the data to be rendered via the passed in `array`, ot
 
 `.x([func|number])`
 
-If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the `x` position of the label. If a value is provided, it will be used as a constant for all datums instead.  
+If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the `x` position of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
@@ -99,7 +99,7 @@ _for more information about this type of accessors, refer to the [accessors](#ac
 
 `.y([func|number])`
 
-If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the `y` position of the label. If a value is provided, it will be used as a constant for all datums instead.  
+If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the `y` position of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
@@ -107,7 +107,7 @@ _for more information about this type of accessors, refer to the [accessors](#ac
 
 `.y([func|string])`
 
-If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the text of the label. If a value is provided, it will be used as a constant for all datums instead.  
+If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the text of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
@@ -115,7 +115,7 @@ _for more information about this type of accessors, refer to the [accessors](#ac
 
 `.y([func|string])`
 
-If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the background color of the label. If a value is provided, it will be used as a constant for all datums instead.  
+If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the background color of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
@@ -123,7 +123,7 @@ _for more information about this type of accessors, refer to the [accessors](#ac
 
 `.y([func|number])`
 
-If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the width of the label. If a value is provided, it will be used as a constant for all datums instead.  
+If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the width of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
@@ -131,7 +131,7 @@ _for more information about this type of accessors, refer to the [accessors](#ac
 
 `.y([func|number])`
 
-If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the height of the label. If a value is provided, it will be used as a constant for all datums instead.  
+If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the height of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
@@ -139,7 +139,7 @@ _for more information about this type of accessors, refer to the [accessors](#ac
 
 `.y([func|string])`
 
-If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the color of the label. If a value is provided, it will be used as a constant for all datums instead.  
+If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the color of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
@@ -147,7 +147,7 @@ _for more information about this type of accessors, refer to the [accessors](#ac
 
 `.y([func|'left'|'center'|'right'])`
 
-If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the horizontal alignment of the text of the label. If a value is provided, it will be used as a constant for all datums instead.  
+If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the horizontal alignment of the text of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
@@ -155,7 +155,7 @@ _for more information about this type of accessors, refer to the [accessors](#ac
 
 `.y([func|'top'|'middle'|'bottom'])`
 
-If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the vertical alignment of the text of the label. If a value is provided, it will be used as a constant for all datums instead.
+If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the vertical alignment of the text of the label. If a value is provided, it will be used as a constant for all data items instead.
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
