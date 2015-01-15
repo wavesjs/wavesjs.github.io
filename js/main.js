@@ -30,17 +30,20 @@ var DocView = Backbone.View.extend({
     this.model.set('category', this.$el.attr('data-category'));
     // prefix all title ids - and build model
     var selector = ['h1', 'h2', 'h3'];
-    var type, inherited;
+    var type, inherited, namespace;
 
     this.$(selector.join(', ')).each(_.bind(function(index, el) {
-      var text = el.innerHTML.replace(/<code>.*<\/code>/, '');
+      var text = el.innerHTML.replace(/<code>.*$/, '');
       text = text.replace('.', '');
       text = _.string.trim(text);
       var slugyfied = _.string.slugify(text);
-      var id = [this.model.get('category'), slugyfied].join('-');
+      var id = namespace ?
+        [namespace, slugyfied].join('-') :
+        [this.model.get('category'), slugyfied].join('-');
 
       // get names
       if (el.tagName === 'H1') {
+        namespace = id;
         this.model.set('name', text);
         this.model.set('hash', id);
       }
@@ -71,7 +74,7 @@ var DocView = Backbone.View.extend({
 });
 
 var DocMenu = Backbone.View.extend({
-  tagName: 'ul',
+  tagName: 'div',
 
   docTemplate:
     ['<ul><li>',

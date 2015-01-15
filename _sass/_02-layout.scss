@@ -79,6 +79,14 @@ $padding: 20px;
 }
 
 .col-left #secondary-nav {
+  h2 {
+    font-weight: normal;
+    font-family: $serif;
+    font-size: 1.3rem;
+    padding: 10px;
+    color: white;
+  }
+
   a {
     display: block;
     font-family: $serif;

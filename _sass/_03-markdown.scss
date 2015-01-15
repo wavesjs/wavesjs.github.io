@@ -40,8 +40,9 @@ code {
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin: 10px 0;
+    position: relative;
 
     code {
       font-size: 1.5rem;
@@ -50,6 +51,28 @@ code {
       margin-left: 20px;
       background-color: rgba(0, 0, 0, 0.05);
       font-weight: normal;
+      position: absolute;
+      left: 15%;
+      top: 4px;
+    }
+
+    em {
+      font-size: 1.2rem;
+      font-style: italic;
+      font-weight: normal;
+      display: inline-block;
+      margin-left: 20px;
+      position: absolute;
+      left: 35%;
+      top: 4px;
+
+      a {
+        color: $blue;
+      }
+
+      code {
+        margin-left: 0;
+      }
     }
 
     & + p {
@@ -103,12 +126,11 @@ code {
 
       code:first-of-type {
         display: inline-block;
-        margin-right: 12px;
+        margin-left: 12px;
       }
 
-      em:first-of-type {
-        display: inline-block;
-        margin-left: 12px;
+      br {
+        line-height: 24px;
       }
     }
   }
