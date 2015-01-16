@@ -42,84 +42,59 @@ graph.add(waveformLayer);
 d3.select('#timeline').call(graph.draw);
 {% endhighlight %}
 
+## Inherited Methods
 
-## Public API {#waveform-public-api}
+{% include _docs/ui/inherits-layer.md %}
 
+## Methods
 
-### #params {#waveform-params}
+### .params `.params([config:Object])`
 
-`.params([object])`
+If `config` is present sets the layer's parameters via the passed in `config`, otherwise returns the layer's internal parameters.  
 
-If `object` is present sets the layer's parameters via the passed in `object`, otherwise returns the layer's internal parameters.  
+Other available parameters :
 
-Available parameters :
+* `renderingStrategy:String = svg`  
+  Sets the layer's rendering strategy. The two available modes are `svg` or `canvas`. 
 
-* `yDomain` {Array} _Defaults to `[-1, 1]`_  
-  Sets the layer's scale's domain to the specified array of numbers.  
-  The array must contain two or more numbers.  
-
-* `renderingStrategy` {'svg'|'canvas'} _Defaults to `'svg'`_  
-  Sets the layer's rendering strategy.  
-
-* `triggerUpdateZoomDelta` {Float} _Defaults to 0.02_  
+* `triggerUpdateZoomDelta:Float = 0.02`  
   Sets the minimum zoom delta level that will trigger an update call.  
 
-* `triggerUpdateDragDelta` {Float} _Defaults to 1_  
+* `triggerUpdateDragDelta:Float = 1`  
   Sets the minimum dragged delta (in pixels) dragged that will trigger an update call.
 
-~~~javascript
+{% highlight js %}
 var layer = waveform()
   .params({
     yDomain: [0, 100],
     renderingStrategy: 'svg',
     // ...
   });
-~~~ 
-
-
-### #data {#waveform-data}
-
-`.data([array{Buffer}])`
+{% endhighlight %}
+ 
+{% assign name = 'data' %}
+{% assign var = 'd' %}
+{% assign type = 'Array|ArrayBuffer' %}
+{% include _docs/method.md %}
 
 If `array` is present sets the data to be rendered via the passed in `array`, otherwise returns the internal data `array`.
 
 
-### #duration {#waveform-duration}
+{% assign name = 'duration' %}
+{% assign var = 'dur' %}
+{% assign type = 'Number' %}
+{% include _docs/method.md %}
 
-`.duration([number])` _mandatory_
-
-If `number` is present sets the duration of the data to be rendered via the passed in `number`, otherwise returns the `number`.  
+If `dur` is present sets the duration of the data to be rendered via the passed in `dur`, otherwise returns the `dur`.  
 _Must be specified in the same unit as the `timeline`'s xDomain._
 
 
-### #sampleRate {#waveform-sampleRate}
+{% assign name = 'sampleRate' %}
+{% assign var = 'rate' %}
+{% assign type = 'Number' %}
+{% include _docs/method.md %}
 
-`.sampleRate([number])`   _mandatory_ 
-
-If `number` is present sets the sampleRate of the _`data`_ array via the passed in `number`, otherwise returns the `number`.
-
-
-### #color {#waveform-color}
-
-`.color([string])`
-
-If `string` is present sets the color to be use for the rendering via the passed in `string`, otherwise returns the `string`.
+If `rate` is present sets the sampleRate of the _`data`_ array via the passed in `rate`, otherwise returns the `rate`.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{% include _docs/ui/color.md %}

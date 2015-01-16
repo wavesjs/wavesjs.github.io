@@ -1,21 +1,7 @@
 ---
-hash: label
-category: ui
-api:
-  - x
-  - y
-  - text
-  - bgColor
-  - width
-  - height
-  - color
-  - align
-  - valign
-  - update
-  - draw
 ---
 
-# Label {#label}
+# Label
 
 Use this module to visualise labels data over a shared timeline.  
 The module relies on the [timeline](https://github.com/Ircam-RnD/timeLine) object.
@@ -25,9 +11,9 @@ The module relies on the [timeline](https://github.com/Ircam-RnD/timeLine) objec
 $ npm install ircam-rnd/label
 ~~~
 
-## Example usage {#label-example-usage}
+## Example usage
 
-~~~javascript
+{% highlight js %}
 var {label, timeline} = require('waves');
 var d3 = timeline.d3 // or require('d3');
 
@@ -61,105 +47,95 @@ var labelLayer = label()
 graph.add(labelLayer);
 // draw the timeline
 d3.select('#timeline').call(graph.draw);
-~~~
+{% endhighlight %}
+
+## Inherited Methods
+
+{% include _docs/ui/inherits-layer.md %}
+
+## Methods
 
 
-## Public API {#label-public-api}
-
-### #params {#label-params}
-
-`.params([object])`
-
-If `object` is present sets the layer's parameters via the passed in `object`, otherwise returns the layer's internal parameters.  
-
-Available parameters :
-
-* `verticalAlignment` {Array} _Defaults to `{ top: '1em', middle: '0.5em', bottom: '0' }`_  
-  Sets values used for vertical alignement. Can be use to tweak vertical alignments for design adjustments
-
-
-### #data {#label-data}
-
-`.data([array{Buffer}])`
-
-If `array` is present sets the data to be rendered via the passed in `array`, otherwise returns the internal data `array`.
-
-
-### #x {#label-x} 
-
-`.x([func|number])`
+{% assign name = 'x' %}
+{% assign var = 'value' %}
+{% assign optional = 'true' %}
+{% assign type = 'Function|Number' %}
+{% include _docs/method.md %}
 
 If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the `x` position of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
-### #y {#label-y} 
-
-`.y([func|number])`
+{% assign name = 'y' %}
+{% assign var = 'value' %}
+{% assign optional = 'true' %}
+{% assign type = 'Function|Number' %}
+{% include _docs/method.md %}
 
 If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the `y` position of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
-### #text {#label-text} 
-
-`.y([func|string])`
+{% assign name = 'text' %}
+{% assign var = 'value' %}
+{% assign optional = 'true' %}
+{% assign type = 'Function|String' %}
+{% include _docs/method.md %}
 
 If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the text of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
-### #bgColor {#label-bgColor} 
-
-`.y([func|string])`
+{% assign name = 'bgColor' %}
+{% assign var = 'value' %}
+{% assign optional = 'true' %}
+{% assign type = 'Function|String' %}
+{% include _docs/method.md %}
 
 If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the background color of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
-### #width {#label-width} 
-
-`.y([func|number])`
+{% assign name = 'width' %}
+{% assign var = 'value' %}
+{% assign optional = 'true' %}
+{% assign type = 'Function|Number' %}
+{% include _docs/method.md %}
 
 If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the width of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
-### #height {#label-height} 
-
-`.y([func|number])`
+{% assign name = 'height' %}
+{% assign var = 'value' %}
+{% assign optional = 'true' %}
+{% assign type = 'Function|Number' %}
+{% include _docs/method.md %}
 
 If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the height of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
-
-### #color {#label-color}
-
-`.y([func|string])`
-
-If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the color of the label. If a value is provided, it will be used as a constant for all data items instead.  
+{% include _docs/ui/color.md %}
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
-### #align {#label-align} 
-
-`.y([func|'left'|'center'|'right'])`
+{% assign name = 'align' %}
+{% assign var = 'value' %}
+{% assign optional = 'true' %}
+{% assign type = 'Function|String' %}
+{% assign defaults = 'left'|'center'|'right'%}
+{% include _docs/method.md %}
 
 If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the horizontal alignment of the text of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
-### #valign {#label-valign} 
-
-`.y([func|'top'|'middle'|'bottom'])`
+{% assign name = 'valign' %}
+{% assign var = 'value' %}
+{% assign optional = 'true' %}
+{% assign type = 'Function|String' %}
+{% assign defaults = 'top'|'middle'|'bottom' %}
+{% include _docs/method.md %}
 
 If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the vertical alignment of the text of the label. If a value is provided, it will be used as a constant for all data items instead.
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
-
-
-### #update {#label-update} 
-
-
-
-
-### #draw {#label-draw} 
