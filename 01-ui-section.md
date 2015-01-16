@@ -6,8 +6,8 @@
 the visual section of the lib
 should parse
 
-~~~javascript
+{% highlight js %}
 $(document).ready(function() {
   console.log('ok');
 });
-~~~
+{% endhighlight %}

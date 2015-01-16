@@ -1,15 +1,7 @@
 ---
-hash: waveform
-category: ui
-api:
-  - params
-  - data
-  - duration
-  - sampleRate
-  - color
 ---
 
-# Waveform {#waveform}
+# Waveform
 
 Use this module to visualise waveform data over a shared timeline.  
 The module relies on the [timeline](https://github.com/Ircam-RnD/timeLine) object.
@@ -21,9 +13,9 @@ $ npm install ircam-rnd/waveform
 
 <!-- _A working demo for this module can be found [here](#)_ -->
 
-## Example usage {#waveform-example-usage}
+## Example usage
 
-~~~javascript
+{% highlight js %}
 var {waveform, timeline} = require('waves');
 var d3 = timeline.d3 // or require('d3');
 
@@ -48,7 +40,7 @@ var waveformLayer = waveform()
 graph.add(waveformLayer);
 // draw the timeline
 d3.select('#timeline').call(graph.draw);
-~~~
+{% endhighlight %}
 
 
 ## Public API {#waveform-public-api}
