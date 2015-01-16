@@ -12,16 +12,30 @@
     <div class="main">
       {% include header.html %}
 
-      {% for doc in site.docs %}
-      {% assign p = doc.relative_path | split:"/" %}
-      {% assign category = p[1] %}
+      {% for page in site.pages %}
+        {% assign section = page.name | replace:".md", "" | split:"-" %}
+        {% assign section = section[1] %}
+        
+        {% if section == 'helpers' or section == 'ui' or section == 'audio' or section == 'lfo'%}
 
-        <section class="class-definition {{ category }}" data-category="{{ category }}">
-          {{ doc.content }}
-        </section>
+          {{page.content}}
+
+          {% for doc in site.docs %}
+            {% assign p = doc.relative_path | split:"/" %}
+            {% assign category = p[1]%}
+            
+              {% if section == category %}
+                <section class="class-definition {{ category }}" data-category="{{ category }}">
+                  {{ doc.content }}
+                </section>
+              {% endif %}
+          
+          {% endfor %}
+
+          {% comment %} {{ content }} {% endcomment %}
+
+        {% endif %}
       {% endfor %}
-
-      {% comment %} {{ content }} {% endcomment %}
 
     </div>
 
