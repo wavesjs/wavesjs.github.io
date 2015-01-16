@@ -15,17 +15,54 @@ code {
   font-style: normal;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: $serif;
+  position: relative;
+}
+// style for the anchor
+.anchor {
+  position: absolute;
+  width: 36px;
+  height: 100%;
+  top: 50%;
+  left: -36px;
+  margin-top: -7px;
+  background: url(./img/anchor-link.png) 0 1px no-repeat;
+  opacity: 0.4;
+}
+
+.category {
+  background-color: lighten($lightBlue, 14%);
+  padding: $padding;
+  border-radius: 2px;
+  margin-top: 30px;
+
+  h1 {
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .anchor {
+    left: -56px;
+    width: 56px;
+  }
+
+  p {
+    color: rgba(0, 0, 0, 0.7);
+    margin: 12px 0;
+  }
+
+  & > p {
+    font-style: italic;
+  }
+}
+
 .class-definition {
   padding: 14px 0;
   border-bottom: 1px dotted $grey;
 
   &:last-child {
     border-bottom: none;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: $serif;
-    position: relative;
   }
 
   // class name
@@ -85,18 +122,6 @@ code {
         margin-left: 14px;
       }
     }
-  }
-
-  // style for the anchor
-  .anchor {
-    position: absolute;
-    width: 36px;
-    height: 100%;
-    top: 50%;
-    left: -36px;
-    margin-top: -7px;
-    background: url(./img/anchor-link.png) 0 1px no-repeat;
-    opacity: 0.4;
   }
 
   pre {

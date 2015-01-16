@@ -123,8 +123,8 @@ $(document).ready(function() {
   $('#secondary-nav').append(menu.render().el);
 
   // // init menu
-  // $('#secondary-nav > ul').accordion();
+  $('#secondary-nav > div > ul').accordion();
   // // create anchors
-  // var selectors = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
-  // $(selectors.join(', ')).createAnchor();
+  var selectors = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+  $(selectors.join(', ')).createAnchor();
 });

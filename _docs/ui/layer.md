@@ -39,7 +39,7 @@ Shared parameters :
   Sets the class used to mark selected items. _Defaults to 'selected'_  
 
 * `top:Number`  
-  Sets the position (_in pixels_) of the component's group from the timeline's top boundary. _Defaults to 0_  
+  Sets the position (_in pixels_) of the component's group from the timeline's top boundary. _Defaults to 0_
 
 * `yDomain:Array`   
   Sets data domain in the y axis from the component perspective. _Defaults to timeline's yDomain_ 
@@ -47,17 +47,22 @@ Shared parameters :
 
 ### .param `(key [, value])`
 
-Sets one parameter, see [`params`](#layer-params) for a more in depth description of available parameters.
+Sets one parameter, see [`params`](#ui-layer-params) for a more in depth description of available parameters.
 
 
-### .update `([data:Array])`
+### .data `([data:Array])`
 
-Prepares the DOM according to the d3's enter/update/remove pattern. If array is given, replace the internal data of the component.
+If `data` is provided, sets the data of the layer to be displayed, if no argument is given, returns the data of the layer.
 
 
 ### .draw `([el:d3Selection])`
 
 Updates the DOM with the actual values of the component's data. If `el` is defined, only the given element will be updated.
+
+
+### .update `([data:Array])`
+
+Prepares the DOM according to the d3's enter/update/remove pattern. If array is given, replace the internal data of the component.
 
 
 ### .handleSelection `(el:DOMNode, e:Event)`
@@ -81,6 +86,18 @@ Adds the `selected` class to each given elements and moves the item at the end o
 
 Removes the `selected` class to each given elements.
 
+
+### .opacity `(value:Number)`
+
+Set the layer opacity at the layer's group level.
+
+
+### .xZoom `(value:Number)`
+
+Update the scales of the layer according to the zoom factor provided.
+
+
 ### .each `(callback:Function)`
 
-D3 like each.
+D3 like each. this function is provided as a helper to handle application specific needs
+
