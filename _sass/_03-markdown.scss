@@ -52,13 +52,13 @@ h1, h2, h3, h4, h5, h6 {
     margin: 12px 0;
   }
 
-  & > p {
+  p:first-of-type {
     font-style: italic;
   }
 }
 
 .class-definition {
-  padding: 14px 0;
+  padding: 14px 0 28px;
   border-bottom: 1px dotted $grey;
 
   &:last-child {
