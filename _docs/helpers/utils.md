@@ -31,28 +31,28 @@ In the case that the given value is a function, the accessor will execute that f
 ## Methods
 
 
-{% assign name = 'isFunction' %}
-{% assign var = 'value' %}
+{% assign method = 'isFunction' %}
+{% assign argument = 'value' %}
 {% assign type = 'Any' %}
-{% assign returns = 'Boolean' %}
-{% include _docs/method.md %}
+{% assign return = 'Boolean' %}
+{% include includes/method.md %}
 
 Tests whether the `value` provided is a `Function`.
 
 
-{% assign name = 'uniqueId' %}
-{% assign var = 'prefix' %}
+{% assign method = 'uniqueId' %}
+{% assign argument = 'prefix' %}
 {% assign type = 'String' %}
-{% assign returns = 'String' %}
-{% include _docs/method.md %}
+{% assign return = 'String' %}
+{% include includes/method.md %}
 
 Generates a globally-unique id.  
 If `prefix` is passed, the id will be appended to it.
 
 
-{% assign name = 'toFront' %}
-{% assign var = 'item' %}
+{% assign method = 'toFront' %}
+{% assign argument = 'item' %}
 {% assign type = 'DOMNode' %}
-{% include _docs/method.md %}
+{% include includes/method.md %}
 
 Moves the provided `item` to the end of it's parent `DOMNode`.

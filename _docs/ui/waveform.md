@@ -44,11 +44,14 @@ d3.select('#timeline').call(graph.draw);
 
 ## Inherited Methods
 
-{% include _docs/ui/inherits-layer.md %}
+{% include includes/ui/inherits-layer.md %}
 
 ## Methods
 
-### .params `.params([config:Object])`
+{% assign method = 'params' %}
+{% assign argument = 'config' %}
+{% assign type = 'Object' %}
+{% include includes/method.md %}
 
 If `config` is present sets the layer's parameters via the passed in `config`, otherwise returns the layer's internal parameters.  
 
@@ -71,30 +74,31 @@ var layer = waveform()
     // ...
   });
 {% endhighlight %}
- 
-{% assign name = 'data' %}
-{% assign var = 'd' %}
+
+
+{% assign method = 'data' %}
+{% assign argument = 'd' %}
 {% assign type = 'Array|ArrayBuffer' %}
-{% include _docs/method.md %}
+{% include includes/method.md %}
 
 If `array` is present sets the data to be rendered via the passed in `array`, otherwise returns the internal data `array`.
 
 
-{% assign name = 'duration' %}
-{% assign var = 'dur' %}
+{% assign method = 'duration' %}
+{% assign argument = 'dur' %}
 {% assign type = 'Number' %}
-{% include _docs/method.md %}
+{% include includes/method.md %}
 
 If `dur` is present sets the duration of the data to be rendered via the passed in `dur`, otherwise returns the `dur`.  
 _Must be specified in the same unit as the `timeline`'s xDomain._
 
 
-{% assign name = 'sampleRate' %}
-{% assign var = 'rate' %}
+{% assign method = 'sampleRate' %}
+{% assign argument = 'rate' %}
 {% assign type = 'Number' %}
-{% include _docs/method.md %}
+{% include includes/method.md %}
 
 If `rate` is present sets the sampleRate of the _`data`_ array via the passed in `rate`, otherwise returns the `rate`.
 
 
-{% include _docs/ui/color.md %}
+{% include includes/ui/color.md %}

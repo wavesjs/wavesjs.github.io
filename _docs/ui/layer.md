@@ -12,6 +12,6 @@ $ npm install ircam-rnd/layer
 
 ## Methods
 
-{% include _docs/ui/inherits-layer.md %}
+{% include includes/ui/inherits-layer.md %}
 
 

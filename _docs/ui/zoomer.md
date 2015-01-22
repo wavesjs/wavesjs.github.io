@@ -34,40 +34,34 @@ var zoom = zoomer()
 
 ## Methods
 
-
-### .select `(selector:String)`
+{% assign method = 'select' %}
+{% assign argument = 'selector' %}
+{% assign type = 'String' %}
+{% include includes/method.md %}
 
 Selects the `DOM` element specified by `selector` to instantiate and attach all the logic to it.
 
 
 ## Events
 
-### .on `.on(evNane:String, cb:Function)`
+{% assign method = 'on' %}
+{% assign arguments = 'evNane,cb' %}
+{% assign types = 'String,Function' %}
+{% include includes/method.md %}
 
 This is the usual `event` handling function. The name of the event we want to subscribe to is set via a `String` as first agrument, and the second argument `cb` is the function that will be called when the desired event is triggered. 
 
 Available events :
 
 
-* `mousedown:String, cb:Function, cb(e:Object)`  
-{% highlight js %}
-e:Object = { anchor: x, originalEvent: e }
-{% endhighlight %}   
-Triggered when the selected `DOMNode` is clicked, will call the provided callback and pass it an `Object` containing the x position where the event hapened, and the default browser's `Event` object.
+* `mousedown`  
+  Triggered when the selected `DOMNode` is clicked, will call the provided callback and pass it an `Object` containing `anchor`: the x position where the event happened, and `originalEvent`: the default browser's `Event` object.
 
 
 
-* `mousemove:String, cb:Function, cb(e:Object)`  
-{% highlight js %}
-e:Object = {
-  anchor: x,
-  factor: zoomFactor,
-  delta: { x: deltaX, y: deltaY },
-  originalEvent: evt
-}
-{% endhighlight %}  
-Triggered when the selected `DOMNode` is clicked and the mouse is moving, will call the provided callback and pass it an `Object` containing the `anchor` where the click event started, the cmputed zoom factor, a `delta` object containing both x and y deltas relative to the `anchor`, and the default browser's `Event` object.
+* `mousemove`  
+  Triggered when the selected `DOMNode` is clicked and the mouse is moving, will call the provided callback and pass it an `Object` containing `anchor`: the x position where the event happened, `factor`: the computed zoom factor, `delta`: an object containing both `x` and `y` deltas relative to the `anchor`, and `originalEvent`: the default browser's `Event` object.
 
 
-* `mouseup:String, cb:Function, cb(e:Event)`  
-Triggered when the selected `DOMNode` is clicked, will call the provided callback and pass it the default browser's `Event` object.
+* `mouseup`  
+  Triggered when the selected `DOMNode` is clicked, will call the provided callback and pass it `originalEvent` with the default browser's `Event` object.
