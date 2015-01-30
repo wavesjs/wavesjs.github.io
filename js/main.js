@@ -88,7 +88,7 @@ var DocMenu = Backbone.View.extend({
     '</li></ul>'].join(''),
 
   initialize: function() {
-    console.log(this.collection.categories);
+    // console.log(this.collection.categories);
 
   },
 

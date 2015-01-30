@@ -6,7 +6,7 @@
     this.$subNav = this.$el.find('ul');
     this.$links = this.$el.find('.lk');
 
-    console.log(this.$el);
+    // console.log(this.$el);
     this.delegateEvents();
   };
 
