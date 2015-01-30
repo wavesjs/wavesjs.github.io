@@ -51,91 +51,83 @@ d3.select('#timeline').call(graph.draw);
 
 ## Inherited Methods
 
-{% include _docs/ui/inherits-layer.md %}
+{% include includes/ui/inherits-layer.md %}
 
 ## Methods
 
 
-{% assign name = 'x' %}
-{% assign var = 'value' %}
-{% assign optional = 'true' %}
+{% assign method = 'x' %}
+{% assign argument = 'value' %}
 {% assign type = 'Function|Number' %}
-{% include _docs/method.md %}
+{% include includes/method.md %}
 
 If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the `x` position of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
-{% assign name = 'y' %}
-{% assign var = 'value' %}
-{% assign optional = 'true' %}
+{% assign method = 'y' %}
+{% assign argument = 'value' %}
 {% assign type = 'Function|Number' %}
-{% include _docs/method.md %}
+{% include includes/method.md %}
 
 If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the `y` position of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
-{% assign name = 'text' %}
-{% assign var = 'value' %}
-{% assign optional = 'true' %}
+{% assign method = 'text' %}
+{% assign argument = 'value' %}
 {% assign type = 'Function|String' %}
-{% include _docs/method.md %}
+{% include includes/method.md %}
 
 If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the text of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
-{% assign name = 'bgColor' %}
-{% assign var = 'value' %}
-{% assign optional = 'true' %}
+{% assign method = 'bgColor' %}
+{% assign argument = 'value' %}
 {% assign type = 'Function|String' %}
-{% include _docs/method.md %}
+{% include includes/method.md %}
 
 If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the background color of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
-{% assign name = 'width' %}
-{% assign var = 'value' %}
-{% assign optional = 'true' %}
+{% assign method = 'width' %}
+{% assign argument = 'value' %}
 {% assign type = 'Function|Number' %}
-{% include _docs/method.md %}
+{% include includes/method.md %}
 
 If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the width of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
-{% assign name = 'height' %}
-{% assign var = 'value' %}
-{% assign optional = 'true' %}
+{% assign method = 'height' %}
+{% assign argument = 'value' %}
 {% assign type = 'Function|Number' %}
-{% include _docs/method.md %}
+{% include includes/method.md %}
 
 If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the height of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
-{% include _docs/ui/color.md %}
+{% include includes/ui/color.md %}
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
-{% assign name = 'align' %}
-{% assign var = 'value' %}
-{% assign optional = 'true' %}
+{% assign method = 'align' %}
+{% assign argument = 'value' %}
 {% assign type = 'Function|String' %}
-{% assign defaults = 'left'|'center'|'right'%}
-{% include _docs/method.md %}
+{% assign default = 'left|center|right'%}
+{% include includes/method.md %}
 
 If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the horizontal alignment of the text of the label. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
-{% assign name = 'valign' %}
-{% assign var = 'value' %}
-{% assign optional = 'true' %}
+{% assign method = 'valign' %}
+{% assign argument = 'value' %}
 {% assign type = 'Function|String' %}
-{% assign defaults = 'top'|'middle'|'bottom' %}
-{% include _docs/method.md %}
+{% assign default = 'top|middle|bottom' %}
+{% include includes/method.md %}
 
 If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the vertical alignment of the text of the label. If a value is provided, it will be used as a constant for all data items instead.
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_

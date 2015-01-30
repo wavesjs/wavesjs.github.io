@@ -43,33 +43,41 @@ d3.select('#timeline').call(graph.draw);
 
 ## Inherited Methods
 
-{% include _docs/ui/inherits-layer.md %}
+{% include includes/ui/inherits-layer.md %}
 
 
 ## Methods
 
-### .cx `([value:Number])`
 
+{% assign method = 'cx' %}
+{% assign argument = 'value' %}
+{% assign type = 'Number' %}
+{% include includes/method.md %}
 If `value` is present sets the `cx` attribute of the breakpoint via the passed in `value`, otherwise returns the `value`.  
 
 
-### .move `(element:DOMNode, deltaX:Number, deltaY:Number)`
 
+{% assign method = 'move' %}
+{% assign arguments = 'element,deltaX,deltaY' %}
+{% assign types = 'DOMNode,Number,Number' %}
+{% include includes/method.md %}
 Moves a given `element` by the number of pixels specified by the `deltaX` and `deltaY` numbers.
 _Note that the registry point for the `move` position is relative to the center of the breakpoint_.
 
 
-### .color `([value:String])`
-
-If `string` is present sets the color to be use for the rendering via the passed in `string`, otherwise returns the `string`.
+{% include includes/ui/color.md %}
 
 
-
-### .cy `([value:Number])`
-
+{% assign method = 'cy' %}
+{% assign argument = 'value' %}
+{% assign type = 'Number' %}
+{% include includes/method.md %}
 If `value` is present sets the `cy` attribute of the breakpoint via the passed in `value`, otherwise returns the `value`.  
 
 
-### .r `([value:Number])`
+{% assign method = 'r' %}
+{% assign argument = 'value' %}
+{% assign type = 'Number' %}
+{% include includes/method.md %}
 
 If `value` is present sets the `r` attribute of the breakpoint via the passed in `value`, otherwise returns the `value`.  

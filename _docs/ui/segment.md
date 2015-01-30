@@ -47,64 +47,68 @@ d3.select('#timeline').call(graph.draw);
 
 ## Inherited Methods
 
-{% include _docs/ui/inherits-layer.md %}
+{% include includes/ui/inherits-layer.md %}
 
 
 
 ## Methods
 
-{% include _docs/ui/color.md %}
+{% include includes/ui/color.md %}
 
 
-{% assign name = 'start' %}
-{% assign var = 'value' %}
-{% assign optional = 'true' %}
+{% assign method = 'start' %}
+{% assign argument = 'value' %}
 {% assign type = 'Function|Number' %}
-{% include _docs/method.md %}
+{% include includes/method.md %}
 
 If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the horizontal position of the segment. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
-{% assign name = 'duration' %}
-{% assign var = 'value' %}
-{% assign optional = 'true' %}
+{% assign method = 'duration' %}
+{% assign argument = 'value' %}
 {% assign type = 'Function|Number' %}
-{% include _docs/method.md %}
+{% include includes/method.md %}
 
 If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the length of the segment. If a value is provided, it will be used as a constant for all data items instead.  
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
 
 
-{% assign name = 'y' %}
-{% assign var = 'value' %}
-{% assign optional = 'true' %}
+{% assign method = 'y' %}
+{% assign argument = 'value' %}
 {% assign type = 'Number' %}
-{% include _docs/method.md %}
+{% include includes/method.md %}
 
 If `number` is present sets the `y` position of the segment via the passed in `number`, otherwise returns the `number`.  
 _Note that the registry point for the `y` position is `bottom-left`_.
 
 
-{% assign name = 'height' %}
-{% assign var = 'value' %}
-{% assign optional = 'true' %}
+{% assign method = 'height' %}
+{% assign argument = '' %}
 {% assign type = 'Number' %}
-{% include _docs/method.md %}
+{% include includes/method.md %}
+
 
 If `number` is present sets the height of the segment via the passed in `number`, otherwise returns the `number`.
 
 
-### .move `(element:DOMNode, deltaX:Number, deltaY:Number)`
+{% assign method = 'move' %}
+{% assign arguments = 'element,deltaX,deltaY' %}
+{% assign types = 'DOMNode,Number,Number' %}
+{% include includes/method.md %}
 
 Moves a given `element` by the number of pixels specified by the `deltaX` and `deltaY` numbers.
 
-
-### .resizeLeft `(element:DOMNode, deltaX:Number, deltaY:Number)`
+{% assign method = 'resizeLeft' %}
+{% assign arguments = 'element,deltaX,deltaY' %}
+{% assign types = 'DOMNode,Number,Number' %}
+{% include includes/method.md %}
 
 Resizes a given `element` on his left side by a number of pixels specified by the `deltaX` and `deltaY` numbers.
 
-
-### .resizeRight `(element:DOMNode, deltaX:Number, deltaY:Number)`
+{% assign method = 'resizeLeft' %}
+{% assign arguments = 'element,deltaX,deltaY' %}
+{% assign types = 'DOMNode,Number,Number' %}
+{% include includes/method.md %}
 
 Resizes a given `element on his righr side by a number of pixels specified by the `deltaX` and `deltaY` numbers.

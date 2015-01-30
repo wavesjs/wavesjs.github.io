@@ -48,7 +48,10 @@ graph.remove(segmentLayer);
 ## Methods
 
 
-### .constructor `([opts:Object])`
+{% assign method = 'constructor' %}
+{% assign argument = 'opts' %}
+{% assign type = 'Object' %}
+{% include includes/method.md %}
 
 If `opts` is present sets the timeline's parameters via the passed in `Object`.  
 
@@ -70,59 +73,59 @@ var graph = timeline({
 
 ## Methods
 
-{% assign name = 'xDomain' %}
-{% assign var = 'domain' %}
+{% assign method = 'xDomain' %}
+{% assign argument = 'domain' %}
 {% assign type = 'Array' %}
-{% include _docs/method.md %}
+{% include includes/method.md %}
 
 Sets the domain of the timeline in the x axis, the given `array` represents the time domain if the visualised data. To keep time consistency, this value is shared with the installed components.  
 
 
-{% assign name = 'yDomain' %}
-{% assign var = 'domain' %}
+{% assign method = 'yDomain' %}
+{% assign argument = 'domain' %}
 {% assign type = 'Array' %}
-{% assign defaults = '[0, 1]' %}
-{% include _docs/method.md %}
+{% assign default = '[0, 1]' %}
+{% include includes/method.md %}
 
 Sets the domain of the timeline in the y axis, this value can be overriden from each installed components. If setted, the value basically acts as a default domain for the y axis in all components.
 
 
-{% assign name = 'width' %}
-{% assign var = 'w' %}
+{% assign method = 'width' %}
+{% assign argument = 'w' %}
 {% assign type = 'Number' %}
-{% include _docs/method.md %}
+{% include includes/method.md %}
 
 Sets the width of the `svg` tag. Is also used to create the internal scale in the x axis, basically  a `d3.scale.linear()` with domain setted to the timeline's `xDomain` and a range setted to `[0, width]`
 
 
-{% assign name = 'height' %}
-{% assign var = 'h' %}
+{% assign method = 'height' %}
+{% assign argument = 'h' %}
 {% assign type = 'Number' %}
-{% include _docs/method.md %}
+{% include includes/method.md %}
 
 Sets the height of the `svg` tag. Is also used to create the internal scale in the y axis, basically  a `d3.scale.linear()` with domain setted to the timeline's `yDomain` and a range setted to `[height, 0]`
 
 
-{% assign name = 'margin' %}
-{% assign var = 'm' %}
+{% assign method = 'margin' %}
+{% assign argument = 'm' %}
 {% assign type = 'Object' %}
-{% assign defaults = '{ top: 0, right: 0, bottom: 0, left: 0 }' %}
-{% include _docs/method.md %}
+{% assign default = '{ top: 0, right: 0, bottom: 0, left: 0 }' %}
+{% include includes/method.md %}
 
 Sets the margin of of the layout inside the create `svg` element. [insert Bostock link here]
 
 
-{% assign name = 'add' %}
+{% assign method = 'add' %}
 {% assign type = 'Layer' %}
-{% include _docs/method.md %}
+{% include includes/method.md %}
 
 Register a new component to the timeline. The added component is then configured and initialized by the timeline.
 
 
-{% assign name = 'remove' %}
+{% assign method = 'remove' %}
 {% assign type = 'Layer' %}
-{% include _docs/method.md %}
+{% include includes/method.md %}
 
 Remove a previously registered component from the timeline. The component's group is also removed from the DOM
 
-{% include _docs/ui/color.md %}
+{% include includes/ui/color.md %}
