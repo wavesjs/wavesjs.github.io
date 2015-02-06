@@ -13,41 +13,7 @@ $ npm install ircam-rnd/label
 
 ## Example usage
 
-{% highlight js %}
-var {label, timeline} = require('waves');
-var d3 = timeline.d3 // or require('d3');
-
-var data = [{
-  text: 'text 1',
-  width: 200,
-  height: 30,
-  x: 0,
-  y: 0,
-  align: 'left'
-}, {
-  text: 'text 2',
-  width: 200,
-  height: 30,
-  x: 200,
-  y: 0,
-  align: 'center'
-}];
-
-// create the graph
-var graph = timeline()
-  .xDomain([0, 400])
-  .width(400)
-  .height(30)
-  
-// create the label layer
-var labelLayer = label()
-  .data(data)
-
-// add the label layer to the timeline
-graph.add(labelLayer);
-// draw the timeline
-d3.select('#timeline').call(graph.draw);
-{% endhighlight %}
+<iframe width="100%" height="300" src="http://jsfiddle.net/dv1xf2az/embedded/result,js,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 ## Inherited Methods
 
@@ -131,3 +97,13 @@ _for more information about this type of accessors, refer to the [accessors](#ac
 
 If a function is provided, the function will be used to access the corresponding property in the `data` in order to define the vertical alignment of the text of the label. If a value is provided, it will be used as a constant for all data items instead.
 _for more information about this type of accessors, refer to the [accessors](#accessors) section_
+
+
+{% assign method = 'margin' %}
+{% assign argument = 'obj' %}
+{% assign type = 'Object' %}
+{% assign default = '{ top: 0, right: 0, bottom: 0, left: 0 }' %}
+{% include includes/method.md %}
+
+Define the margin betweeen the text and the bounding box
+_this method is an accessor, for more information refer to the [accessors](#accessors) section_

@@ -13,36 +13,7 @@ $ npm install ircam-rnd/segment
 
 ## Example usage
 
-<!--
-{% highlight js %}
-var {segment, timeline} = require('waves');
-var d3 = timeline.d3 // or require('d3');
-
-var data = [{
-    start: 50,
-    duration: 20
-  }, {
-    start: 120,
-    duration: 50
-}];
-
-// create the graph
-var graph = timeline()
-  .xDomain([0, 200])
-  .width(1000)
-  .height(150);
-  
-// create the segment layer
-var segmentLayer = segment()
-  .data(data);
-
-// add the segment layer to the timeline
-graph.add(segmentLayer);
-// draw the timeline
-d3.select('#timeline').call(graph.draw);
-{% endhighlight %}
--->
-<iframe width="100%" height="300" src="http://jsfiddle.net/gd6ywt7e/2/embedded/result,js,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="300" src="http://jsfiddle.net/gd6ywt7e/3/embedded/result,js,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
 ## Inherited Methods

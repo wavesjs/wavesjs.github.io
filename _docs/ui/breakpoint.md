@@ -13,38 +13,11 @@ $ npm install ircam-rnd/breakpoint
 
 ## Example usage
 
-{% highlight js %}
-var {breakpoint, timeline} = require('waves');
-var d3 = timeline.d3 // or require('d3');
-
-var breakpointData = [{
-    start: 50,
-    duration: 20
-  }, {
-    start: 120,
-    duration: 50
-}];
-
-// create the graph
-var graph = timeline()
-  .xDomain([0, 200])
-  .width(1000)
-  .height(150);
-  
-// create the breakpoint layer
-var breakpointLayer = breakpoint()
-  .data(breakpointData);
-
-// add the breakpoint layer to the timeline
-graph.add(breakpointLayer);
-// draw the timeline
-d3.select('#timeline').call(graph.draw);
-{% endhighlight %}
+<iframe width="100%" height="300" src="http://jsfiddle.net/oa75a4s0/embedded/result,js,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 ## Inherited Methods
 
 {% include includes/ui/inherits-layer.md %}
-
 
 ## Methods
 

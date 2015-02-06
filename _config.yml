@@ -9,7 +9,7 @@ baseurl: "/waves" # the subpath of your site, e.g. /blog/
 url: "ircam.github.io" # the base hostname & protocol for your site
 
 github: "https://github.com/ircam-rnd"
-download: "https://github.com/ircam-rnd/waves"
+download: "https://github.com/Ircam-RnD/waves/archive/master.zip"
 revision: 2.0
 
 # Build settings
