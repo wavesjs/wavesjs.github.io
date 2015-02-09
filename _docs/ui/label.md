@@ -21,7 +21,6 @@ $ npm install ircam-rnd/label
 
 ## Methods
 
-
 {% assign method = 'x' %}
 {% assign argument = 'value' %}
 {% assign type = 'Function|Number' %}
