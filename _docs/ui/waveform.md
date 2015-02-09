@@ -33,7 +33,6 @@ var waveformLayer = waveform()
   // pass the raw ArrayBuffer from our audio buffer
   .data(buffer.getChannelData(0).buffer)
   .sampleRate(buffer.sampleRate)
-  .duration(buffer.duration)
   .color('steelblue');
 
 // add the waveform layer to the timeline
@@ -82,15 +81,6 @@ var layer = waveform()
 {% include includes/method.md %}
 
 If `array` is present sets the data to be rendered via the passed in `array`, otherwise returns the internal data `array`.
-
-
-{% assign method = 'duration' %}
-{% assign argument = 'dur' %}
-{% assign type = 'Number' %}
-{% include includes/method.md %}
-
-If `dur` is present sets the duration of the data to be rendered via the passed in `dur`, otherwise returns the `dur`.  
-_Must be specified in the same unit as the `timeline`'s xDomain._
 
 
 {% assign method = 'sampleRate' %}

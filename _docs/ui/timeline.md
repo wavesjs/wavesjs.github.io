@@ -78,7 +78,7 @@ var graph = timeline({
 {% assign type = 'Array' %}
 {% include includes/method.md %}
 
-Sets the domain of the timeline in the x axis, the given `array` represents the time domain if the visualised data. To keep time consistency, this value is shared with the installed components.  
+Sets the domain of the timeline in the x axis, the given `array` represents the time domain if the visualised data. To keep time consistency, this value is shared with the installed components. To prevent any unit problems with other components, the `xDomain` should be defined in seconds
 
 
 {% assign method = 'yDomain' %}
