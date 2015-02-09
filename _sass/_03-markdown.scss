@@ -11,8 +11,9 @@ pre {
 }
 
 code {
-  font-size: 1.5rem;
+  font-size: 12px;
   font-style: normal;
+  font-family: monospace;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -92,7 +93,6 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 
     code {
-      font-size: 1.5rem;
       font-style: normal;
       display: inline-block;
       margin-left: 20px;
