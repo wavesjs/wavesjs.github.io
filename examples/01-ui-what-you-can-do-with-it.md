@@ -7,6 +7,24 @@ layout: examples
 The aim of this tutorial is to create a more complex visualization, combining several components of the `waves.js` library, as well as how they can be integrated with d3.  
 At the end of the tutorial, you should be able to build the following example:
 
+<style>
+svg text {
+  font-family: monospace;
+  font-size: 11px;
+}
+
+#zoomer {
+  cursor: ns-resize;
+}
+
+.segment-item {
+  cursor: all-scroll;
+}
+
+.segment-item .handle {
+  cursor: ew-resize;
+}
+</style>
 <div id="zoomer"></div>
 <div id="timeline"></div>
 <script src="{{ "/js/examples/01-ui-what-you-can-do-with-it.js" | prepend: site.baseurl }}"></script>
@@ -218,6 +236,31 @@ var zoom = zoomer()
   });
 {% endhighlight %}
 
-## Et voilà !
+
+## 6. Add somme style
+
+to help the user, you can add some css to display usefull informations about the possible interactions
+
+{% highlight css %}
+svg text {
+  font-family: monospace;
+  font-size: 11px;
+}
+
+#zoomer {
+  cursor: ns-resize;
+}
+
+.segment-item {
+  cursor: all-scroll;
+}
+
+.segment-item .handle {
+  cursor: ew-resize;
+}
+{% endhighlight %}
+
+
+Et voilà, you should now have a working visualization of your audio file and meta-datas !
 
 
