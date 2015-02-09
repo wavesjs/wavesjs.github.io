@@ -10,7 +10,12 @@ url: "ircam.github.io" # the base hostname & protocol for your site
 
 github: "https://github.com/ircam-rnd"
 download: "https://github.com/Ircam-RnD/waves/archive/master.zip"
+wavesUmd: ""
+# use raw git for the moment, when in production update url to cdn rawgit
+# same for jsfiddle examples
+
 revision: 2.0
+
 
 # Build settings
 markdown: kramdown

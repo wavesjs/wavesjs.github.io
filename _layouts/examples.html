@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    <div class="col-left">
+      {% include sidebar.html %}
+    </div>
+
+    <div class="main">
+      {% include header.html %}
+
+      <section class="class-definition {{ category }}">
+        {{ content }}
+      </section>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>
