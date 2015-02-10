@@ -157,19 +157,15 @@ var drawGraph = function(buffer) {
     })
     .on('mousemove', function(e) {
       e.originalEvent.preventDefault();
-      // update anchor position
-      var xDomainPos = graph.originalXscale.invert(e.anchor);
-      anchor.setCurrentTime(xDomainPos).draw();
-      // update graph xZoom
+      // update graph
       graph.xZoom(e);
+      graph.update();
       // redraw the axis to keep it up to date with the graph
       axis.call(xAxis);
     })
     .on('mouseup', function(e) {
       // set the final xZoom value of the graph
       graph.xZoomSet();
-      // update axis with the new graph xScale
-      xAxis.scale(graph.xScale);
       // update axis
       axis.call(xAxis);
     });

@@ -210,30 +210,24 @@ then, bind the `waves.ui.zoomer` helper to this newly created axis, and configur
 var zoom = zoomer()
   .select('#zoomer') // bind the zoomer helper to the `#zoomer` tag
   .on('mousedown', function(e) {
-    // get the current time from the mouse coordinate
-    var xDomainPos = graph.xScale.invert(e.anchor);
-    // update the anchor position
-    anchor.setCurrentTime(xDomainPos);
-    graph.update(anchor);
-  })
-  .on('mousemove', function(e) {
-    e.originalEvent.preventDefault();
-    // update anchor position
-    var xDomainPos = graph.originalXscale.invert(e.anchor);
-    anchor.setCurrentTime(xDomainPos).draw();
-    // update graph xZoom
-    graph.xZoom(e);
-    // redraw the axis to keep it up to date with the graph
-    axis.call(xAxis);
-  })
-  .on('mouseup', function(e) {
-    // set the final xZoom value of the graph
-    graph.xZoomSet();
-    // update axis with the new graph xScale
-    xAxis.scale(graph.xScale);
-    // update axis
-    axis.call(xAxis);
-  });
+      // update anchor position
+      var xDomainPos = graph.xScale.invert(e.anchor);
+      anchor.setCurrentTime(xDomainPos);
+      graph.update(anchor);
+    })
+    .on('mousemove', function(e) {
+      // update graph
+      graph.xZoom(e);
+      graph.update();
+      // update axis
+      axis.call(xAxis);
+    })
+    .on('mouseup', function(e) {
+      // set the final xZoom value of the graph
+      graph.xZoomSet();
+      // update axis
+      axis.call(xAxis);
+    });
 {% endhighlight %}
 
 
