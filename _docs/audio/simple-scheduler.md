@@ -10,6 +10,22 @@ Simplified schduler singleton based on audio time, where Time Engine is the mast
 $ npm install ircam-rnd/simple-scheduler
 ~~~
 
+## Attributes
+
+{% assign attribute = 'period' %}
+{% assign type = 'Number' %}
+{% assign default = '0.025' %}
+{% include includes/attribute.md %}
+
+Value for setTimeout period.
+
+{% assign attribute = 'lookahead' %}
+{% assign type = 'Number' %}
+{% assign default = '0.1' %}
+{% include includes/attribute.md %}
+
+Lookahead time. Should be greater than the period attribute.
+
 ## Methods
 
 {% assign method = 'currentTime' %}

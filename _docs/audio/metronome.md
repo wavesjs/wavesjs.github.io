@@ -10,6 +10,43 @@ Metronome audio engine. It extends Time Engine as a transported interface.
 $ npm install ircam-rnd/metronome
 ~~~
 
+## Attributes
+
+{% assign attribute = 'period' %}
+{% assign type = 'Number' %}
+{% assign default = 'period = 1' %}
+{% include includes/attribute.md %}
+
+Metronome period in seconds. Default as the value passed in the constructor.
+
+{% assign attribute = 'clickFreq' %}
+{% assign type = 'Number' %}
+{% assign default = '600' %}
+{% include includes/attribute.md %}
+
+Metronome click frequency.
+
+{% assign attribute = 'clickAttack' %}
+{% assign type = 'Number' %}
+{% assign default = '0.002' %}
+{% include includes/attribute.md %}
+
+Metronome click attack time.
+
+{% assign attribute = 'clickRelease' %}
+{% assign type = 'Number' %}
+{% assign default = '0.098' %}
+{% include includes/attribute.md %}
+
+Metronome click release time.
+
+{% assign attribute = 'outputNode' %}
+{% assign type = 'Object' %}
+{% assign default = 'gainNode' %}
+{% include includes/attribute.md %}
+
+On instanciation an output gain node is created. Every tick should pass through this node.
+
 ## Methods
 
 {% assign method = 'constuctor' %}

@@ -10,6 +10,36 @@ Used with a buffer to serve audio files.
 $ npm install ircam-rnd/player-engine
 ~~~
 
+## Attributes
+
+{% assign attribute = 'transport' %}
+{% assign type = 'Object' %}
+{% assign default = 'null' %}
+{% include includes/attribute.md %}
+
+Refers to a transport object when added to one.
+
+{% assign attribute = 'buffer' %}
+{% assign type = 'AudioBuffer' %}
+{% assign default = 'buffer' %}
+{% include includes/attribute.md %}
+
+The audio buffer. Default as the object passed in the constructor.
+
+{% assign attribute = 'fadeTime' %}
+{% assign type = 'Number' %}
+{% assign default = '0.005' %}
+{% include includes/attribute.md %}
+
+Fade time for chaining segments (e.g. in start, stop, and seek).
+
+{% assign attribute = 'outputNode' %}
+{% assign type = 'Number' %}
+{% assign default = 'gainNode' %}
+{% include includes/attribute.md %}
+
+On instanciation an output gain node is created. Every tick should pass through this node.
+
 ## Methods
 
 {% assign method = 'constuctor' %}

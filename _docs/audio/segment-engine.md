@@ -14,6 +14,162 @@ When "transported", the engine generates segments at the position of their onset
 $ npm install ircam-rnd/player-engine
 ~~~
 
+## Attributes
+
+{% assign attribute = 'buffer' %}
+{% assign type = 'AudioBuffer' %}
+{% assign default = 'buffer' %}
+{% include includes/attribute.md %}
+
+The audio buffer. Default as the object passed in the constructor.
+
+% assign attribute = 'periodAbs' %}
+{% assign type = 'Number' %}
+{% assign default = '0.1' %}
+{% include includes/attribute.md %}
+
+Absolute segment period in sec.
+
+{% assign attribute = 'periodRel' %}
+{% assign type = 'Number' %}
+{% assign default = '0' %}
+{% include includes/attribute.md %}
+
+Segment period relative to inter-segment distance.
+
+{% assign attribute = 'periodVar' %}
+{% assign type = 'Number' %}
+{% assign default = '0' %}
+{% include includes/attribute.md %}
+
+Amout of random segment period variation relative to segment period.
+
+{% assign attribute = 'positionArray' %}
+{% assign type = 'Array' %}
+{% assign default = '[0.0]' %}
+{% include includes/attribute.md %}
+
+Array of random sgment period variation relative to segment period.
+
+{% assign attribute = 'positionVar' %}
+{% assign type = 'Number' %}
+{% assign default = '0' %}
+{% include includes/attribute.md %}
+
+Amount of random segment position variation in seconds.
+
+{% assign attribute = 'durationArray' %}
+{% assign type = 'Array' %}
+{% assign default = '[0.0]' %}
+{% include includes/attribute.md %}
+
+Array of segment durations in seconds.
+
+{% assign attribute = 'durationAbs' %}
+{% assign type = 'Number' %}
+{% assign default = '0' %}
+{% include includes/attribute.md %}
+
+Absolute segment duration in seconds.
+
+{% assign attribute = 'durationRel' %}
+{% assign type = 'Number' %}
+{% assign default = '1' %}
+{% include includes/attribute.md %}
+
+Segment duration relative given segment duration or inter-segment distance.
+
+{% assign attribute = 'offsetArray' %}
+{% assign type = 'Array' %}
+{% assign default = '[0.0]' %}
+{% include includes/attribute.md %}
+
+Array of segment offsets in seconds. If greate than 0, the segment's reference position is after the given segment position. Otherwise, the given segment position is the segment's reference position and the duration has to be corrected by the offset.
+
+{% assign attribute = 'offsetAbs' %}
+{% assign type = 'Number' %}
+{% assign default = '-0.005' %}
+{% include includes/attribute.md %}
+
+Absolute segment offset in seconds.
+
+{% assign attribute = 'offsetRel' %}
+{% assign type = 'Number' %}
+{% assign default = '0' %}
+{% include includes/attribute.md %}
+
+Segment offset relative to segment duration.
+
+{% assign attribute = 'delay' %}
+{% assign type = 'Number' %}
+{% assign default = '0.005' %}
+{% include includes/attribute.md %}
+
+Time by which all segments are delayed (especially to realize segments offsets).
+
+{% assign attribute = 'attackAbs' %}
+{% assign type = 'Number' %}
+{% assign default = '0.005' %}
+{% include includes/attribute.md %}
+
+Absolute attack time in seconds.
+
+{% assign attribute = 'attackRel' %}
+{% assign type = 'Number' %}
+{% assign default = '0' %}
+{% include includes/attribute.md %}
+
+Attack time relative to segment duration.
+
+{% assign attribute = 'releaseAbs' %}
+{% assign type = 'Number' %}
+{% assign default = '0.005' %}
+{% include includes/attribute.md %}
+
+Absolute release time in seconds.
+
+{% assign attribute = 'releaseRel' %}
+{% assign type = 'Number' %}
+{% assign default = '0' %}
+{% include includes/attribute.md %}
+
+Release time relative to segment duration.
+
+{% assign attribute = 'resampling' %}
+{% assign type = 'Number' %}
+{% assign default = '0' %}
+{% include includes/attribute.md %}
+
+Segment resampling in cent.
+
+{% assign attribute = 'resamplingVar' %}
+{% assign type = 'Number' %}
+{% assign default = '0' %}
+{% include includes/attribute.md %}
+
+Amount of random resampling variation in cent.
+
+{% assign attribute = 'segmentIndex' %}
+{% assign type = 'Number' %}
+{% assign default = '0' %}
+{% include includes/attribute.md %}
+
+Index of.
+
+{% assign attribute = 'cyclic' %}
+{% assign type = 'Boolean' %}
+{% assign default = 'false' %}
+{% include includes/attribute.md %}
+
+Wheter the audio buffer and segment indices are considered as cyclic.
+
+{% assign attribute = 'outputNode' %}
+{% assign type = 'Object' %}
+{% assign default = 'gainNode' %}
+{% include includes/attribute.md %}
+
+On instanciation an output gain node is created. Every tick should pass through this node.
+
 ## Methods
 
 {% assign method = 'constuctor' %}

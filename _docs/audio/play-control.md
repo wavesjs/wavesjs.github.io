@@ -2,7 +2,6 @@
 
 ---   
 
-
 # Play Control
 
 Extends Time Engine to provide playback control of a Time Engine instance.

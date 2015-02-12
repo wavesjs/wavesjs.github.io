@@ -13,6 +13,22 @@ that enable synchronisation to a master and handle how absolute or relative time
 $ npm install ircam-rnd/time-engine
 ~~~
 
+## Attributes
+
+{% assign attribute = 'interface' %}
+{% assign type = 'String' %}
+{% assign default = 'null' %}
+{% include includes/attribute.md %}
+
+Interface currently used.
+
+{% assign attribute = 'outputNode' %}
+{% assign type = 'Object' %}
+{% assign default = 'null' %}
+{% include includes/attribute.md %}
+
+Output audio node.
+
 ## Methods
 
 {% assign method = 'currentTime' %}
@@ -62,6 +78,8 @@ Connect to other audio node e.g.: AudioContext.destionation.
 {% include includes/method.md %}
 
 Disconnect from the audio node passed as a parameter.
+
+## Static methods
 
 {% assign method = 'implementsScheduled' %}
 {% assign argument = 'engine' %}

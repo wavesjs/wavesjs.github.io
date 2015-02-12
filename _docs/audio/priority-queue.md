@@ -11,6 +11,15 @@ events or callbacks by priority.
 $ npm install ircam-rnd/priority-queue
 ~~~
 
+## Attributes
+
+{% assign attribute = 'reverse' %}
+{% assign type = 'Boolean' %}
+{% assign default = 'false' %}
+{% include includes/attribute.md %}
+
+Wheter the queue should be reversed or not.
+
 ## Methods
 
 {% assign method = 'insert' %}

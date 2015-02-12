@@ -10,6 +10,22 @@ The scheduler is a global singleton that allows for scheduling time-engines (see
 $ npm install ircam-rnd/scheduler
 ~~~
 
+## Attributes
+
+{% assign attribute = 'period' %}
+{% assign type = 'Number' %}
+{% assign default = '0.025' %}
+{% include includes/attribute.md %}
+
+Value for setTimeout period.
+
+{% assign attribute = 'lookahead' %}
+{% assign type = 'Number' %}
+{% assign default = '0.1' %}
+{% include includes/attribute.md %}
+
+Lookahead time. Should be greater than the period attribute.
+
 ## Methods
 
 {% assign method = 'currentTime' %}
