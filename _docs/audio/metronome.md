@@ -10,7 +10,15 @@ Metronome audio engine. It extends Time Engine as a transported interface.
 $ npm install ircam-rnd/metronome
 ~~~
 
-## Override of Time Engine methods (!!!)
+## Methods
+
+{% assign method = 'constuctor' %}
+{% assign argument = 'period' %}
+{% assign default = '1' %}  
+{% assign type = 'Number' %}
+{% include includes/method.md %}
+
+The pediod passed as a parameter on instanciation sets the pediod between each tick.
 
 {% assign method = 'advanceTime' %}
 {% assign argument = 'time' %}
@@ -18,17 +26,21 @@ $ npm install ircam-rnd/metronome
 {% assign default = '' %}   
 {% include includes/method.md %}
 
+Implementation of the scheduled interface.
+
 {% assign method = 'syncPosition' %}
 {% assign argument = 'time,position,speed' %}
 {% assign type = 'Number,Number,Number' %}
 {% include includes/method.md %}
+
+Implementation of the transported interface.
 
 {% assign method = 'advancePosition' %}
 {% assign argument = 'time,position,speed' %}
 {% assign type = 'Number,Number,Number' %}
 {% include includes/method.md %}
 
-## Methods
+Implementation of the transported interface.
 
 {% assign method = 'trigger' %}
 {% assign argument = 'time' %}

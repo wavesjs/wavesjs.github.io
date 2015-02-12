@@ -30,6 +30,27 @@ An audio buffer instance should be passed to the constructor in order to serve a
 
 Returns buffer's audio file duration.
 
+{% assign method = 'advanceTime' %}
+{% assign argument = 'time,position,speed' %}
+{% assign type = 'Number,Number,Number' %}
+{% include includes/method.md %}
+
+Implementation of the transported time engine interface.
+
+{% assign method = 'syncPosition' %}
+{% assign argument = 'time,position,speed' %}
+{% assign type = 'Number,Number,Number' %}
+{% include includes/method.md %}
+
+Implementation of the transported time engine interface.
+
+{% assign method = 'advancePosition' %}
+{% assign argument = 'time,position,speed' %}
+{% assign type = 'Number,Number,Number' %}
+{% include includes/method.md %}
+
+Implementation of the transported time engine interface.
+
 {% assign method = 'gain' %}
 {% assign argument = 'value' %}
 {% assign type = 'Number' %}

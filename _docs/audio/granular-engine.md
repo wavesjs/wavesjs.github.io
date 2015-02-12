@@ -33,6 +33,13 @@ Returns buffer's audio file duration.
 
 Returns current time engine position.
 
+{% assign method = 'advanceTime' %}
+{% assign argument = 'time' %}
+{% assign type = 'Number' %}
+{% include includes/method.md %}
+
+Implementation of the transported time engine interface.
+
 {% assign method = 'playbackLength' %}
 {% assign return = 'Number' %}
 {% include includes/method.md %}

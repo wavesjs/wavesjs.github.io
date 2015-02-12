@@ -20,6 +20,14 @@ $ npm install ircam-rnd/player-engine
 
 An audio buffer instance should be passed to the constructor in order to serve audio content.
 
+{% assign method = 'syncSpeed' %}
+{% assign argument = 'time,position,speed,seek' %}
+{% assign type = 'Number,Number,Number,Boolean' %}
+{% assign default = ',,,false' %}
+{% include includes/method.md %}
+
+Implementation of the speed-controlled interface.
+
 {% assign method = 'cyclic' %}
 {% assign argument = 'cyclic' %}
 {% assign type = 'Boolean' %}

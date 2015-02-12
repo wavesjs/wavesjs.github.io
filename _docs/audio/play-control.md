@@ -64,6 +64,14 @@ If startTime is provided sets loop start value, otherwise returns its value.
 
 If startTime is provided sets loop start value, otherwise returns its value.
 
+{% assign method = 'syncSpeed' %}
+{% assign argument = 'time,position,speed,seek' %}
+{% assign type = 'Number,Number,Number,Boolean' %}
+{% assign default = ',,,false' %}
+{% include includes/method.md %}
+
+Implementation of the speed-controlled interface.
+
 {% assign method = 'start' %}
 {% include includes/method.md %}
 

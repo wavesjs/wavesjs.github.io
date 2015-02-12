@@ -34,6 +34,28 @@ Returns current master position.
 
 Reset next tranport position.
 
+{% assign method = 'syncPosition' %}
+{% assign argument = 'time,position,speed' %}
+{% assign type = 'Number,Number,Number' %}
+{% include includes/method.md %}
+
+Implementation of the transported time engine interface.
+
+{% assign method = 'advancePosition' %}
+{% assign argument = 'time,position,speed' %}
+{% assign type = 'Number,Number,Number' %}
+{% include includes/method.md %}
+
+Implementation of the transported time engine interface.
+
+{% assign method = 'syncSpeed' %}
+{% assign argument = 'time,position,speed,seek' %}
+{% assign type = 'Number,Number,Number,Boolean' %}
+{% assign default = ',,,false' %} 
+{% include includes/method.md %}
+
+Implementation of the speed-controlled time engine interface.
+
 {% assign method = 'add' %}
 {% assign argument = 'engine,startPosition,endPosition,offsetPosition' %}
 {% assign type = 'Object,Number,Number,Number' %}
