@@ -12,7 +12,7 @@ $ npm install ircam-rnd/player-engine
 
 ## Example usage
 
-<iframe width="100%" height="300" src="//jsfiddle.net/renaudfv/jcox95yv/28/embedded/result,js,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="400" src="//jsfiddle.net/renaudfv/jcox95yv/28/embedded/result,js,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 ## Attributes
 
