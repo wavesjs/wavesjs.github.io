@@ -10,6 +10,10 @@ Used with a buffer to serve audio files via granular synthesis.
 $ npm install ircam-rnd/player-engine
 ~~~
 
+## Example usage
+
+<iframe width="100%" height="300" src="//jsfiddle.net/renaudfv/jcox95yv/26/embedded/result,js,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
 ## Attributes
 
 {% assign attribute = 'buffer' %}
