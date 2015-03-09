@@ -24,6 +24,7 @@ var zoom = zoomer()
   .on('mousemove', function(e) {
     // update graph xZoom
     graph.xZoom(e);
+    graph.update();
   })
   .on('mouseup', function(e) {
     // set the final xZoom value of the graph
