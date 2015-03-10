@@ -1,0 +1,20 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    {% if site.description %}<meta name="description" content="{{ site.description }}">{% endif %}
+
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="{{ "/js/underscore.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/underscore.string.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/backbone.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/plugins.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
+    <!-- load library -->
+    <script src="https://rawgit.com/Ircam-RnD/waves/master/waves.min.js"></script>
+</head>

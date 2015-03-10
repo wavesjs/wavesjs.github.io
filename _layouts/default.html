@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    <div class="col-left">
+      {% include sidebar.html %}
+    </div>
+
+    <div class="main">
+      {% include header.html %}
+
+      <header class="category">
+      {{ content }}
+      </header>
+
+      {% for doc in site.docs %}
+
+        {% assign p = doc.relative_path | split:"/" %}
+        {% assign category = p[1] %}
+        {% assign categoryTest = category | prepend:"/" %}
+
+          {% if page.dir == categoryTest %}
+            <section class="class-definition {{ category }}" data-category="{{ category }}">
+              {{ doc.content }}
+            </section>
+          {% endif %}
+
+      {% endfor %}
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

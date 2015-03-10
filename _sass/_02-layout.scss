@@ -1,0 +1,233 @@
+body, ul, p, h1, h2, h3, h4, h5, h6, p, blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 64.5%;
+}
+
+body {
+  background: $white;
+  font-family: $sansSerif;
+  margin: 0;
+  font-size: 1.4rem;
+  color: $darkGrey;
+}
+
+// commons
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+
+  &:hover, &:focus {
+    text-decoration: underline;
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+p a {
+  text-decoration: underline;
+  color: $blue;
+
+  &:hover, &:focus {
+    color: lighten($blue, 5%);
+  }
+}
+
+// LAYOUT
+.github-lk {
+  background: url(./img/github.png) 0 50% no-repeat;
+  padding-left: 26px;
+  line-height: 22px;
+}
+
+.download-lk {
+  background: url(./img/download.png) 2px 50% no-repeat;
+  padding-left: 26px;
+  line-height: 22px;
+}
+
+// bloc sizes
+$colWidth: 300px;
+$mainWidth: 800px;
+$padding: 20px;
+
+// left col
+.col-left {
+  background-color: $darkGrey;
+  color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $colWidth;
+  height: 100%;
+  overflow: auto;
+}
+
+// resources bloc
+.col-left #resources {
+  background-color: lighten($lightBlue, 10%);
+  padding: $padding;
+
+  a {
+    display: block;
+  }
+
+  pre {
+    padding: 6px;
+  }
+}
+
+.col-left #secondary-nav {
+  h2 {
+    font-weight: normal;
+    font-family: $serif;
+    font-size: 1.3rem;
+    padding: 10px $padding;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    background-color: darken($darkGrey, 4%);
+    border-bottom: 1px solid darken($darkGrey, 12%);
+  }
+
+  a {
+    display: block;
+    font-family: $serif;
+    font-size: 1.2rem;
+
+    &:hover, &:active {
+      text-decoration: none;
+    }
+  }
+
+  ul {
+    li {
+      list-style-type: none;
+      border-bottom: 1px dotted $grey;
+
+      a {
+        color: #cccccc;
+        padding: 10px $padding;
+
+        &:active, &:hover {
+          background-color: lighten($darkGrey, 6%);
+        }
+      }
+
+      ul {
+        display: none;
+
+        li {
+          border-bottom: none;
+
+          a {
+            padding: 5px $padding 5px ($padding * 2);
+            color: $grey;
+            background-color: #dddddd;
+
+            &:active, &:hover {
+              background-color: lighten(#dddddd, 10%);
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+// main content
+.main {
+  margin-left: $colWidth;
+  padding: $padding $padding $padding 60px;
+  width: $mainWidth;
+  position: relative;
+}
+
+.main #header {
+  border-bottom: 1px solid $lightGrey;
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+  position: relative;
+
+  h1 {
+    font-family: $serif;
+    font-size: 4rem;
+  }
+
+  nav {
+    position: absolute;
+    bottom: 16px;
+    right: 0;
+
+    ul li {
+      list-style-type: none;
+      float: left;
+      margin-left: 12px;
+      display: inline-block;
+
+      a {
+        display: block;
+        background-color: $lightBlue;
+        padding: 4px 8px;
+        border-radius: 2px;
+        color: rgba(255, 255, 255, 0.9);
+
+        &:hover, &:active {
+          text-decoration: none;
+          background-color: lighten($lightBlue, 4%);
+        }
+      }
+    }
+  }
+}
+
+.main #filters {
+  ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 3px;
+
+    a {
+      display: block;
+      padding: 2px 6px;
+      background-color: $lightGrey;
+      border-radius: 2px;
+
+      &:hover, &:active {
+        text-decoration: none;
+        background-color: lighten($lightGrey, 4%);
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

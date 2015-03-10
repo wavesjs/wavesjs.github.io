@@ -1,0 +1,172 @@
+// MARKDOWN
+pre {
+  margin: 0;
+  // border: 1px solid $grey;
+  border-radius: 2px;
+  padding: 12px;
+  margin: 3px 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  font-size: 1.5rem;
+  font-family: $monospace;
+}
+
+code {
+  font-size: 12px;
+  font-style: normal;
+  font-family: monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $serif;
+  position: relative;
+}
+// style for the anchor
+.anchor {
+  position: absolute;
+  width: 36px;
+  height: 100%;
+  top: 50%;
+  left: -36px;
+  margin-top: -7px;
+  background: url(./img/anchor-link.png) 0 1px no-repeat;
+  opacity: 0.4;
+}
+
+.category {
+  background-color: lighten($lightBlue, 14%);
+  padding: $padding * 1.5;
+  border-radius: 2px;
+  margin-top: 30px;
+
+  h1 {
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .anchor {
+    left: -56px;
+    width: 56px;
+  }
+
+  p {
+    color: rgba(0, 0, 0, 0.7);
+    margin: 12px 0;
+    line-height: 22px;
+  }
+
+  p:first-of-type {
+    font-style: italic;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0 60px 0 40px;
+
+    li {
+
+    }
+  }
+}
+
+.class-definition {
+  padding: 14px 0 28px;
+  border-bottom: 1px dotted $grey;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  // class name
+  h1 {
+    font-size: 2rem;
+    margin: 16px 0;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin: 20px 0;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    margin: 10px 0;
+    position: relative;
+
+    code {
+      font-style: normal;
+      display: inline-block;
+      margin-left: 20px;
+      background-color: rgba(0, 0, 0, 0.05);
+      font-weight: normal;
+      position: absolute;
+      left: 15%;
+      top: 4px;
+    }
+
+    em {
+      font-size: 1.2rem;
+      font-style: italic;
+      font-weight: normal;
+      display: inline-block;
+      margin-left: 20px;
+      position: absolute;
+      left: 35%;
+      top: 4px;
+
+      a {
+        color: $blue;
+      }
+
+      code {
+        margin-left: 0;
+      }
+    }
+
+    & + p {
+      display: inline-block;
+      margin: 0;
+      margin-left: 20px;
+
+      em {
+        display: inline-block;
+        color: $grey;
+      }
+    }
+  }
+
+  pre {
+    margin: 20px 0;
+  }
+
+  p {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    margin: 16px 0;
+    width: 70%;
+  }
+
+  p code {
+    padding: 1px 3px;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.035);
+  }
+
+  ul {
+    margin: 16px 0 16px 36px;
+
+    li p {
+      font-size: 1.2rem;
+      line-height: 1.7rem;
+      margin: 10px 0;
+
+      code:first-of-type {
+        display: inline-block;
+        margin-left: 12px;
+      }
+
+      br {
+        line-height: 24px;
+      }
+    }
+  }
+}

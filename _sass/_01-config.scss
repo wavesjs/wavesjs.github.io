@@ -1,0 +1,26 @@
+// CONFIG
+// ----------------------------------------
+
+// COLORS
+$darkGrey: #404040;
+$grey: lighten($darkGrey, 25%);
+$lightGrey: lighten($darkGrey, 50%);
+$white: #fdfdfd;
+$lightBlue: #aec7e8;
+$blue: darken($lightBlue, 20%);
+
+// FONTS
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+
+$sansSerif: arial, sans-serif;
+$sansSerif: 'Lato', sans-serif;
+$serif: 'Roboto Slab', serif;
+$monospace: Monaco, Consolas, 'Lucida Console', monospace;
+
+
+// MIXINS
+@mixin font-size($size) {
+  font-size: ($size) + px;
+  font-size: ($size / 10) + rem;
+}
