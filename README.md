@@ -1,7 +1,3 @@
----
-layout: default
----
+# WAVES.JS Documentation
 
-# WAVES.JS
-
-WAVES.JS library repository
+[http://wavesjs.github.io](http://wavesjs.github.io)
