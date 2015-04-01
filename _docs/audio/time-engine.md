@@ -13,6 +13,10 @@ that enable synchronisation to a master and handle how absolute or relative time
 $ npm install ircam-rnd/time-engine
 ~~~
 
+## Example
+
+<iframe width="100%" height="300" src="//jsfiddle.net/jcox95yv/37/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
 ## Attributes
 
 {% assign attribute = 'interface' %}
