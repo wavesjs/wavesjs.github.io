@@ -15,7 +15,7 @@ $ npm install ircam-rnd/time-engine
 
 ## Example
 
-<iframe width="100%" height="300" src="//jsfiddle.net/jcox95yv/37/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="300" src="//jsfiddle.net/jcox95yv/37/embedded/result,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 ## Attributes
 
