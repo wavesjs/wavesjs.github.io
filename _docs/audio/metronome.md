@@ -5,57 +5,73 @@
 
 Metronome audio engine. It extends Time Engine as a transported interface.
 
+##Usage
+
 ~~~
-# to use as a standalone module
-$ npm install ircam-rnd/metronome
+var wavesAudio = require('waves-audio');
+var scheduler = wavesAudio.getScheduler();
+var metronome = new wavesAudio.Metronome({period: 0.333});
+
+scheduler.add(metronome);
 ~~~
 
 ## Attributes
 
 {% assign attribute = 'period' %}
 {% assign type = 'Number' %}
-{% assign default = 'period = 1' %}
+{% assign default = '1' %}
 {% include includes/attribute.md %}
 
-Metronome period in seconds. Default as the value passed in the constructor.
+Metronome period in seconds.
+
+{% assign attribute = 'phase' %}
+{% assign type = 'Number' %}
+{% assign default = '0' %}
+{% include includes/attribute.md %}
+
+Metronome phase when driven through *transported* interface [0, 1[.
 
 {% assign attribute = 'clickFreq' %}
 {% assign type = 'Number' %}
 {% assign default = '600' %}
 {% include includes/attribute.md %}
 
-Metronome click frequency.
+Click sound frequency.
 
 {% assign attribute = 'clickAttack' %}
 {% assign type = 'Number' %}
 {% assign default = '0.002' %}
 {% include includes/attribute.md %}
 
-Metronome click attack time.
+Click sound attack time.
 
 {% assign attribute = 'clickRelease' %}
 {% assign type = 'Number' %}
 {% assign default = '0.098' %}
 {% include includes/attribute.md %}
 
-Metronome click release time.
+Click sound release time.
 
-{% assign attribute = 'outputNode' %}
-{% assign type = 'Object' %}
-{% assign default = 'gainNode' %}
+{% assign method = 'gain' %}
+{% assign type = 'Number' %}
+{% assign default = '0' %}
 {% include includes/attribute.md %}
 
-On instanciation an output gain node is created. Every tick should pass through this node.
+Linear gain factor.
 
 ## Methods
 
 {% assign method = 'constuctor' %}
-{% assign argument = 'period' %}
-{% assign default = '1' %}  
-{% assign type = 'Number' %}
+{% assign argument = 'options' %}
+{% assign default = '{}' %}  
+{% assign type = 'Object' %}
 {% include includes/method.md %}
 
-The pediod passed as a parameter on instanciation sets the pediod between each tick.
+The constructor accepts a set of options:
+<ul>
+  <li>audioContext, the audio context used</li>
+  <li>all parameter attributes, to initialize the parameter values</li>
+</ul>
 
 {% assign method = 'advanceTime' %}
 {% assign argument = 'time' %}
@@ -63,39 +79,25 @@ The pediod passed as a parameter on instanciation sets the pediod between each t
 {% assign default = '' %}   
 {% include includes/method.md %}
 
-Implementation of the scheduled interface.
+Implementation of the *scheduled* `TimeEngine` interface.
 
 {% assign method = 'syncPosition' %}
 {% assign argument = 'time,position,speed' %}
 {% assign type = 'Number,Number,Number' %}
 {% include includes/method.md %}
 
-Implementation of the transported interface.
+Implementation of the *transported* `TimeEngine` interface.
 
 {% assign method = 'advancePosition' %}
 {% assign argument = 'time,position,speed' %}
 {% assign type = 'Number,Number,Number' %}
 {% include includes/method.md %}
 
-Implementation of the transported interface.
+Implementation of the *transported* `TimeEngine` interface.
 
 {% assign method = 'trigger' %}
 {% assign argument = 'time' %}
 {% assign type = 'Number' %}
 {% include includes/method.md %}
 
-Trigger metronome click at the time specified.
-
-{% assign method = 'gain' %}
-{% assign argument = 'value' %}
-{% assign type = 'Number' %}
-{% include includes/method.md %}
-
-Sets gain attribute if a value argument is present, returns gain value if not.
-
-{% assign method = 'phase' %}
-{% assign argument = 'value' %}
-{% assign type = 'Number' %}
-{% include includes/method.md %}
-
-Sets phase attribute if a value argument is present, returns phase value if not.
+Trigger metronome click at a given time.

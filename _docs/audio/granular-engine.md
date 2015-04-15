@@ -3,32 +3,39 @@
 
 # Granular Engine
 
-Used with a buffer to serve audio files via granular synthesis.
+Granular synthesis `TimeEngine` implementing the *scheduled* interface.
+
+## Usage
 
 ~~~
-# to use as a standalone module
-$ npm install ircam-rnd/player-engine
+var wavesAudio = require('waves-audio');
+var scheduler = wavesAudio.getScheduler();
+var granularEngine = new wavesAudio.GranularEngine();
+
+scheduler.add(granularEngine);
 ~~~
 
-## Example usage
+## Example
 
-<iframe width="100%" height="500" src="//jsfiddle.net/renaudfv/jcox95yv/28/embedded/result,js,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+This example shows a `GranularEngine` with a few parameter controls running in a [`Scheduler`](#audio-scheduler).
+
+<iframe width="100%" height="500" src="//jsfiddle.net/70u3q9sq/2/embedded/result,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 ## Attributes
 
 {% assign attribute = 'buffer' %}
 {% assign type = 'AudioBuffer' %}
-{% assign default = 'buffer' %}
+{% assign default = 'null' %}
 {% include includes/attribute.md %}
 
-The audio buffer. Default as the object passed in the constructor.
+Audio buffer.
 
 {% assign attribute = 'periodAbs' %}
 {% assign type = 'Number' %}
 {% assign default = '0.01' %}
 {% include includes/attribute.md %}
 
-Absolute grain period in sec.
+Absolute grain period in seconds.
 
 {% assign attribute = 'periodRel' %}
 {% assign type = 'Number' %}
@@ -70,7 +77,7 @@ Absolute grain duration in seconds.
 {% assign default = '0' %}
 {% include includes/attribute.md %}
 
-Grain duration relative to grain period (overlap).
+Grain duration relative to grain period (*i.e* grain *overlap*).
 
 {% assign attribute = 'attackAbs' %}
 {% assign type = 'Number' %}
@@ -114,76 +121,76 @@ Grain resampling in cent.
 
 Amount of random resampling variation in cent.
 
+{% assign method = 'gain' %}
+{% assign type = 'Number' %}
+{% assign default = '0' %}
+{% include includes/attribute.md %}
+
+Linear grain gain factor.
+
 {% assign attribute = 'centered' %}
 {% assign type = 'Boolean' %}
 {% assign default = 'true' %}
 {% include includes/attribute.md %}
 
-Wheter the grain position refers to the center of the grain (or the begenning).
+Whether the grain position refers to the center of the grain (or to the beginning).
 
 {% assign attribute = 'cyclic' %}
 {% assign type = 'Boolean' %}
 {% assign default = 'false' %}
 {% include includes/attribute.md %}
 
-Wheter the audio buffer and grain position are considered as cyclic.
+Whether the audio buffer and grain position are considered as cyclic.
 
-{% assign attribute = 'outputNode' %}
-{% assign type = 'Object' %}
-{% assign default = 'gainNode' %}
+{% assign attribute = 'currentPosition' %}
+{% assign type = 'Number' %}
+{% assign default = 'this.position' %}
 {% include includes/attribute.md %}
 
-On instanciation an output gain node is created. Audio content should pass through that node.
+Current position.
+
+{% assign attribute = 'wrapAroundExtension' %}
+{% assign type = 'Number' %}
+{% assign default = '0' %}
+{% include includes/attribute.md %}
+
+Portion at the end of the audio buffer that has been copied from the beginning to assure cyclic behavior.
+This attribute corresponds to the `wrapAroundExtension` option of the `load` method of the [`AudioBufferLoader`](http://wavesjs.github.io/loaders/#loaders-loaders-audiobufferloader) and [`SuperLoader`](http://wavesjs.github.io/loaders/#loaders-loaders-superloader)).
+
+{% assign attribute = 'bufferDuration' %}
+{% assign type = 'Number' %}
+{% assign default = 'this.buffer.duration' %}
+{% include includes/attribute.md %}
+
+Duration of the current audio buffer (*i.e.* `buffer` attribute) excluding the `wrapAroundExtension`.
 
 ## Methods
 
 {% assign method = 'constuctor' %}
-{% assign argument = 'buffer' %}
-{% assign default = 'null' %}  
+{% assign argument = 'options' %}
+{% assign default = '{}' %}  
 {% assign type = 'Object' %}
 {% include includes/method.md %}
 
-An audio buffer instance should be passed to the constructor in order to serve audio content.
-
-
-{% assign method = 'bufferDuration' %}
-{% assign return = 'Number' %}
-{% include includes/method.md %}
-
-Returns buffer's audio file duration.
-
-{% assign method = 'currentPosition' %}
-{% assign return = 'Number' %}
-{% include includes/method.md %}
-
-Returns current time engine position.
+The constructor accepts a set of options:
+<ul>
+  <li>audioContext, the audio context used</li>
+  <li>all parameter attributes, to initialize the parameter values</li>
+</ul>
 
 {% assign method = 'advanceTime' %}
 {% assign argument = 'time' %}
 {% assign type = 'Number' %}
 {% include includes/method.md %}
 
-Implementation of the transported time engine interface.
-
-{% assign method = 'playbackLength' %}
-{% assign return = 'Number' %}
-{% include includes/method.md %}
-
-Returns buffer's audio file duration.
-
-{% assign method = 'gain' %}
-{% assign argument = 'value' %}
-{% assign type = 'Number' %}
-{% assign return = 'Number' %}
-{% include includes/method.md %}
-
-If value is provided, sets audio node gain value. Otherwise, returns the gain value.
+Implementation of the *scheduled* `TimeEngine` interface.
 
 {% assign method = 'trigger' %}
 {% assign argument = 'time' %}
+{% assign default = 'this.audioContext.currentTime' %}  
 {% assign type = 'Number' %}
 {% assign return = 'Number' %}
 {% include includes/method.md %}
 
-Trigger a grain where time is the grain synthesis audio time. Returns the period
-time between each grain. 
+Trigger a single grain with the current parameters at the given audio time.
+Returns the current grain period (*i.e.* time until next grain).
