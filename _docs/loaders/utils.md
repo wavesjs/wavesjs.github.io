@@ -1,14 +1,10 @@
+{% comment %}
 ---
 ---
 
 # Utils
 
 In this module you can find a collection of helpers used trhoughout the modules of the lib.  
-
-~~~
-# to use as a standalone module
-$ npm install ircam-rnd/utils
-~~~
 
 ## Attributes
 
@@ -56,3 +52,4 @@ If `prefix` is passed, the id will be appended to it.
 {% include includes/method.md %}
 
 Moves the provided `item` to the end of it's parent `DOMNode`.
+{% endcomment %}

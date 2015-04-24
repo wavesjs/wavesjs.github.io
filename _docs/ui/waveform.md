@@ -6,13 +6,6 @@
 Use this module to visualise waveform data over a shared timeline.  
 The module relies on the [timeline](https://github.com/Ircam-RnD/timeLine) object.
 
-~~~
-# to use as a standalone module
-$ npm install ircam-rnd/waveform
-~~~
-
-<!-- _A working demo for this module can be found [here](#)_ -->
-
 ## Example usage
 
 {% highlight js %}

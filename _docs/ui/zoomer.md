@@ -7,11 +7,6 @@ This component handles user interactions on a the selected `DOMNode` and trigger
 
 The **zoom** factor is increased or decreased when the mouse is clicked and moved across it's **y axis**, and the **position** offset by moving it across the **x axis**.
 
-~~~
-# to use as a standalone module
-$ npm install ircam-rnd/zoomer
-~~~
-
 ## Example usage
 
 {% highlight js %}

@@ -6,15 +6,56 @@
 Use this module to visualise or edit data segments over a shared timeline.  
 _The module relies on a [timeline](#timeline) instance._
 
-~~~
-# to use as a standalone module
-$ npm install ircam-rnd/segment
-~~~
-
 ## Example usage
 
+{% comment %}
 <iframe width="100%" height="300" src="http://jsfiddle.net/gd6ywt7e/3/embedded/result,js,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+{% endcomment %}
+<style>
+#segment-layer-timeline {
+    outline: 1px solid #ababab;
+    width: 400px;
+    margin: 50px auto;
+}
 
+#segment-layer-timeline .segment-item line {
+    cursor: ew-resize;
+}
+</style>
+<div id="segment-layer-timeline"></div>
+<script>
+var timeline = wavesUI.timeline;
+var segment = wavesUI.segment;
+var d3 = timeline.d3;
+
+var data = [
+    {
+        start: 100,
+        duration: 200
+    }, {
+        start: 650,
+        duration: 300
+    }
+];
+
+var graph = timeline()
+    .width(400)
+    .height(120)
+    .xDomain([0, 1000]);
+
+var segmentLayer = segment()
+    .params({
+        interactions: { editable: true },
+        opacity: 0.4,
+        handlerOpacity: 0.6
+    })
+    .data(data)
+    .color('steelblue');
+
+graph.add(segmentLayer);
+
+d3.select('#segment-layer-timeline').call(graph.draw);
+</script>
 
 ## Inherited Methods
 
@@ -77,9 +118,9 @@ Moves a given `element` by the number of pixels specified by the `deltaX` and `d
 
 Resizes a given `element` on his left side by a number of pixels specified by the `deltaX` and `deltaY` numbers.
 
-{% assign method = 'resizeLeft' %}
+{% assign method = 'resizeRight' %}
 {% assign arguments = 'element,deltaX,deltaY' %}
 {% assign types = 'DOMNode,Number,Number' %}
 {% include includes/method.md %}
 
-Resizes a given `element on his righr side by a number of pixels specified by the `deltaX` and `deltaY` numbers.
+Resizes a given `element` on his right side by a number of pixels specified by the `deltaX` and `deltaY` numbers.
