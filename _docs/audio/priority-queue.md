@@ -6,11 +6,6 @@
 Used by [Scheduler](#audio-scheduler) and [Transport](#audio-transport) to handle
 events or callbacks by priority.
 
-~~~
-# to use as a standalone module
-$ npm install ircam-rnd/priority-queue
-~~~
-
 ## Attributes
 
 {% assign attribute = 'reverse' %}

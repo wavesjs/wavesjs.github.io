@@ -23,6 +23,10 @@ scheduler.add(myEngine);
 
 This example shows three [`Metronome`](#audio-metronome) engines running in a `Scheduler`.
 
+<div id='scheduler-container'></div>
+<script src="https://rawgit.com/wavesjs/audio/master/examples/scheduler.js"></script>
+<a href="https://rawgit.com/wavesjs/audio/master/examples/scheduler.js" target="_blank">[source code]</a>
+
 ## Attributes
 
 {% assign attribute = 'period' %}

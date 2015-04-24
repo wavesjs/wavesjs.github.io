@@ -6,10 +6,26 @@
 
 Provides synchronized scheduling of Time Engine instances.
 
+##Usage
+
 ~~~
-# to use as a standalone module
-$ npm install ircam-rnd/transport
+var wavesAudio = require('waves-audio');
+var transport = wavesAudio.Transport();
+var playControl = new wavesAudio.PlayControl(transport);
+var myEngine = new MyEngine();
+var yourEngine = new yourEngine();
+
+transport.add(myEngine);
+transport.add(yourEngine);
+
+playControl.start();
 ~~~
+
+##Example
+
+<div id='transport-container'></div>
+<script src="https://rawgit.com/wavesjs/audio/master/examples/transport.js"></script>
+<a href="https://rawgit.com/wavesjs/audio/master/examples/transport.js" target="_blank">[source code]</a>
 
 ## Methods
 

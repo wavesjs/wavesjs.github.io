@@ -53,6 +53,10 @@ MyEngine.prototype.itsMethod = function() {
 
 This example shows a `TimeEngine` running in a `Scheduler` that counts up at a given frequency.
 
+<div id='time-engine-container'></div>
+<script src="https://rawgit.com/wavesjs/audio/master/examples/time-engine.js"></script>
+<a href="https://rawgit.com/wavesjs/audio/master/examples/time-engine.js" target="_blank">[source code]</a>
+
 ## Attributes
 
 {% assign attribute = 'master' %}

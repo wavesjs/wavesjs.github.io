@@ -23,6 +23,10 @@ scheduler.add(segmentEngine);
 
 This example shows a `SegmentEngine` with a few parameter controls running in a [`Scheduler`](#audio-scheduler).
 
+<div id='segment-engine-container'></div>
+<script src="https://rawgit.com/wavesjs/audio/master/examples/segment-engine.js"></script>
+<a href="https://rawgit.com/wavesjs/audio/master/examples/segment-engine.js" target="_blank">[source code]</a>
+
 ## Attributes
 
 {% assign attribute = 'buffer' %}

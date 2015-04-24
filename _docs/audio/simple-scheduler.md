@@ -20,3 +20,7 @@ scheduler.add(myEngine);
 ## Example
 
 This example shows three [`Metronome`](#audio-metronome) engines running in a `SimpleScheduler`.
+
+<div id='simple-scheduler-container'></div>
+<script src="https://rawgit.com/wavesjs/audio/master/examples/simple-scheduler.js"></script>
+<a href="https://rawgit.com/wavesjs/audio/master/examples/simple-scheduler.js" target="_blank">[source code]</a>

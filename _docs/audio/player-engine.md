@@ -6,9 +6,18 @@
 Used with a buffer to serve audio files.
 
 ~~~
-# to use as a standalone module
-$ npm install ircam-rnd/player-engine
+var wavesAudio = require('waves-audio');
+var playerEngine = wavesAudio.PlayerEngine();
+var playControl = new wavesAudio.PlayControl(playerEngine);
+
+playControl.start();
 ~~~
+
+##Example
+
+<div id='player-engine-container'></div>
+<script src="https://rawgit.com/wavesjs/audio/master/examples/player-engine.js"></script>
+<a href="https://rawgit.com/wavesjs/audio/master/examples/player-engine.js" target="_blank">[source code]</a>
 
 ## Attributes
 
