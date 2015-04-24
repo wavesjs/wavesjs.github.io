@@ -5,11 +5,6 @@
 
 Use this module to create time based visualisations. The module is essentially a component manager written on top of [d3.js](http://d3js.org/), it doesn't accomplish much by itself as long as you don't pass it in some component to display.
 
-~~~
-# to use as a standalone module
-$ npm install ircam-rnd/timeline
-~~~
-
 ## Example usage
 
 This illustrates how to use the `timeline` with a [segment](#ui-segment) component.

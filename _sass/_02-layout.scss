@@ -203,6 +203,41 @@ $padding: 20px;
   }
 }
 
+.main #home {
+  ul {
+    overflow: auto;
+
+    li {
+      width: 48%;
+
+      &:nth-child(odd) {
+        float: left;
+      }
+
+      &:nth-child(even) {
+        float: right;
+      }
+
+      a {
+        display: block;
+        background-color: $darkGrey;
+        margin: 8px 0;
+        height: 140px;
+        text-align: center;
+        line-height: 140px;
+        color: #ffffff;
+        font-size: 3rem;
+        // @include transition(background-color, 200ms);
+
+        &:hover {
+          background-color: $grey;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
 
 
 
