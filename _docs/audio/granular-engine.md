@@ -17,9 +17,11 @@ scheduler.add(granularEngine);
 
 ## Example
 
-This example shows a `GranularEngine` with a few parameter controls running in a [`Scheduler`](#audio-scheduler).
+This example shows a `GranularEngine` (with a few parameter controls) driven by a `Scheduler` and a `PlayControl`.
 
-<iframe width="100%" height="500" src="//jsfiddle.net/70u3q9sq/2/embedded/result,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<div id='granular-engine-container'></div>
+<script src="https://rawgit.com/wavesjs/audio/master/examples/granular-engine.js"></script>
+<a href="https://rawgit.com/wavesjs/audio/master/examples/granular-engine.js" target="_blank">[source code]</a>
 
 ## Attributes
 

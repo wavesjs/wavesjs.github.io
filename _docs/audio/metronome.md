@@ -68,10 +68,10 @@ Linear gain factor.
 {% include includes/method.md %}
 
 The constructor accepts a set of options:
-<ul>
-  <li>audioContext, the audio context used</li>
-  <li>all parameter attributes, to initialize the parameter values</li>
-</ul>
+
+- audioContext, the audio context used
+
+- all parameter attributes, to initialize the parameter values
 
 {% assign method = 'advanceTime' %}
 {% assign argument = 'time' %}

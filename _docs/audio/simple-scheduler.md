@@ -20,5 +20,3 @@ scheduler.add(myEngine);
 ## Example
 
 This example shows three [`Metronome`](#audio-metronome) engines running in a `SimpleScheduler`.
-
-<iframe width="100%" height="300" src="//jsfiddle.net/416tnu4g/1/embedded/result,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>

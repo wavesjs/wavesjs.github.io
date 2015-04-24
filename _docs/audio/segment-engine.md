@@ -23,8 +23,6 @@ scheduler.add(segmentEngine);
 
 This example shows a `SegmentEngine` with a few parameter controls running in a [`Scheduler`](#audio-scheduler).
 
-<iframe width="100%" height="500" src="//jsfiddle.net/ykma1s7y/1/embedded/result,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
 ## Attributes
 
 {% assign attribute = 'buffer' %}

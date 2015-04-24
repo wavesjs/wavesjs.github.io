@@ -53,8 +53,6 @@ MyEngine.prototype.itsMethod = function() {
 
 This example shows a `TimeEngine` running in a `Scheduler` that counts up at a given frequency.
 
-<iframe width="100%" height="300" src="//jsfiddle.net/o62eanxw/2/embedded/result,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
 ## Attributes
 
 {% assign attribute = 'master' %}

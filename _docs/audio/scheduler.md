@@ -23,8 +23,6 @@ scheduler.add(myEngine);
 
 This example shows three [`Metronome`](#audio-metronome) engines running in a `Scheduler`.
 
-<iframe width="100%" height="300" src="//jsfiddle.net/odbnodfe/1/embedded/result,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
 ## Attributes
 
 {% assign attribute = 'period' %}

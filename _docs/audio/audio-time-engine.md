@@ -49,10 +49,11 @@ MyEngine.prototype.itsMethod = function() {
 
 ## Example
 
-This example shows an `AudioTimeEngine` running in a `Scheduler` that repeats the waveform of a given vowel – cut outof a voice recording – at a given frequency.
+This example shows a *scheduled* `AudioTimeEngine` repeating the waveform of a given vowel – cut outof a voice recording – at a given frequency.
 
 <div id='audio-time-engine-container'></div>
 <script src="https://rawgit.com/wavesjs/audio/master/examples/audio-time-engine.js"></script>
+<a href="https://rawgit.com/wavesjs/audio/master/examples/audio-time-engine.js" target="_blank">[source code]</a>
 
 ## Attributes
 
