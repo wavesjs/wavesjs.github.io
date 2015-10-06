@@ -9,10 +9,23 @@ When "scheduled", the engine generates segments more or less periodically
 (controlled by the periodAbs, periodRel, and perioVar attributes).
 When "transported", the engine generates segments at the position of their onset time.  
 
+## Usage
+
 ~~~
-# to use as a standalone module
-$ npm install ircam-rnd/player-engine
+var wavesAudio = require('waves-audio');
+var scheduler = wavesAudio.getScheduler();
+var segmentEngine = new wavesAudio.SegmentEngine();
+
+scheduler.add(segmentEngine);
 ~~~
+
+## Example
+
+This example shows a `SegmentEngine` with a few parameter controls running in a [`Scheduler`](#audio-scheduler).
+
+<div id='segment-engine-container'></div>
+<script src="https://rawgit.com/wavesjs/audio/master/examples/segment-engine.js"></script>
+<a href="https://rawgit.com/wavesjs/audio/master/examples/segment-engine.js" target="_blank">[source code]</a>
 
 ## Attributes
 
@@ -21,7 +34,7 @@ $ npm install ircam-rnd/player-engine
 {% assign default = 'buffer' %}
 {% include includes/attribute.md %}
 
-The audio buffer. Default as the object passed in the constructor.
+Audio buffer.
 
 % assign attribute = 'periodAbs' %}
 {% assign type = 'Number' %}
@@ -49,7 +62,7 @@ Amout of random segment period variation relative to segment period.
 {% assign default = '[0.0]' %}
 {% include includes/attribute.md %}
 
-Array of random sgment period variation relative to segment period.
+Array of random segment segment positions in seconds.
 
 {% assign attribute = 'positionVar' %}
 {% assign type = 'Number' %}
@@ -77,7 +90,7 @@ Absolute segment duration in seconds.
 {% assign default = '1' %}
 {% include includes/attribute.md %}
 
-Segment duration relative given segment duration or inter-segment distance.
+Segment duration relative to the duration determined by the `durationArray` or inter-segment distance.
 
 {% assign attribute = 'offsetArray' %}
 {% assign type = 'Array' %}
@@ -91,7 +104,11 @@ Array of segment offsets in seconds. If greate than 0, the segment's reference p
 {% assign default = '-0.005' %}
 {% include includes/attribute.md %}
 
-Absolute segment offset in seconds.
+Absolute segment offset in seconds. 
+The offset determines the actual reference position of the segment. 
+More precisely, it corresponds to the offset of the segment's reference position in respect to the given segment position.
+A positive offset indicates the segment's reference position after the segment position (*i.e.* at `position + offset`).
+If the offset is negative, the segment position refers to the segment's reference position, but the segment actually starts by the given offset earlier (*i.e.* at `position + offset`). Consequently, also the segment's actual duration is by the given offset longer (*i.e.* position - offset).
 
 {% assign attribute = 'offsetRel' %}
 {% assign type = 'Number' %}
@@ -149,12 +166,19 @@ Segment resampling in cent.
 
 Amount of random resampling variation in cent.
 
+{% assign method = 'gain' %}
+{% assign type = 'Number' %}
+{% assign default = '0' %}
+{% include includes/attribute.md %}
+
+Linear segment gain factor.
+
 {% assign attribute = 'segmentIndex' %}
 {% assign type = 'Number' %}
 {% assign default = '0' %}
 {% include includes/attribute.md %}
 
-Index of.
+Segment index.
 
 {% assign attribute = 'cyclic' %}
 {% assign type = 'Boolean' %}
@@ -163,57 +187,62 @@ Index of.
 
 Wheter the audio buffer and segment indices are considered as cyclic.
 
-{% assign attribute = 'outputNode' %}
-{% assign type = 'Object' %}
-{% assign default = 'gainNode' %}
+{% assign attribute = 'currentPosition' %}
+{% assign type = 'Number' %}
+{% assign default = 'this.position' %}
 {% include includes/attribute.md %}
 
-On instanciation an output gain node is created. Every tick should pass through this node.
+Current position.
+
+{% assign attribute = 'wrapAroundExtension' %}
+{% assign type = 'Number' %}
+{% assign default = '0' %}
+{% include includes/attribute.md %}
+
+Portion at the end of the audio buffer that has been copied from the beginning to assure cyclic behavior.
+This attribute corresponds to the `wrapAroundExtension` option of the `load` method of the [`AudioBufferLoader`](http://wavesjs.github.io/loaders/#loaders-loaders-audiobufferloader) and [`SuperLoader`](http://wavesjs.github.io/loaders/#loaders-loaders-superloader)).
+
+{% assign attribute = 'bufferDuration' %}
+{% assign type = 'Number' %}
+{% assign default = 'this.buffer.duration' %}
+{% include includes/attribute.md %}
+
+Duration of the current audio buffer (*i.e.* `buffer` attribute) excluding the `wrapAroundExtension`.
 
 ## Methods
 
 {% assign method = 'constuctor' %}
-{% assign argument = 'buffer' %}
-{% assign default = 'null' %}  
+{% assign argument = 'options' %}
+{% assign default = '{}' %}  
 {% assign type = 'Object' %}
 {% include includes/method.md %}
 
-An audio buffer instance should be passed to the constructor in order to serve audio content.
-
-{% assign method = 'bufferDuration' %}
-{% assign return = 'Number' %}
-{% include includes/method.md %}
-
-Returns buffer's audio file duration.
+The constructor accepts a set of options:
+<ul>
+  <li>audioContext, the audio context used</li>
+  <li>all parameter attributes, to initialize the parameter values</li>
+</ul>
 
 {% assign method = 'advanceTime' %}
-{% assign argument = 'time,position,speed' %}
-{% assign type = 'Number,Number,Number' %}
+{% assign argument = 'time' %}
+{% assign type = 'Number' %}
 {% include includes/method.md %}
 
-Implementation of the transported time engine interface.
+Implementation of the *scheduled* `TimeEngine` interface.
 
 {% assign method = 'syncPosition' %}
 {% assign argument = 'time,position,speed' %}
 {% assign type = 'Number,Number,Number' %}
 {% include includes/method.md %}
 
-Implementation of the transported time engine interface.
+Implementation of the *transported* `TimeEngine` interface.
 
 {% assign method = 'advancePosition' %}
 {% assign argument = 'time,position,speed' %}
 {% assign type = 'Number,Number,Number' %}
 {% include includes/method.md %}
 
-Implementation of the transported time engine interface.
-
-{% assign method = 'gain' %}
-{% assign argument = 'value' %}
-{% assign type = 'Number' %}
-{% assign return = 'Number' %}
-{% include includes/method.md %}
-
-If value is provided, sets audio node gain value. Otherwise, returns the gain value.
+Implementation of the *transported* `TimeEngine` interface.
 
 {% assign method = 'trigger' %}
 {% assign argument = 'time' %}
@@ -221,5 +250,5 @@ If value is provided, sets audio node gain value. Otherwise, returns the gain va
 {% assign return = 'Number' %}
 {% include includes/method.md %}
 
-Trigger a segment where time is the segment synthesis audio time. Returns the period
-time between each segment. 
+Trigger a single segment with the current parameters at the given audio time.
+Returns the current segment period (*i.e.* time until next segment).

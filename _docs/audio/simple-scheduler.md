@@ -3,75 +3,24 @@
 
 # Simple Scheduler
 
-Simplified schduler singleton based on audio time, where Time Engine is the master.
+The `SimpleScheduler` class implements a simplified master for time engines (see [`TimeEngine`](#audio-time-engine) or [`AudioTimeEngine`](#audio-audio-time-engine)) that implement the *scheduled* interface such as the [`Metronome`](#audio-metronome) and the [`GranularEngine`](#audio-granular-engine).
+The API and funtionalities of the `SimpleScheduler` class are identical to the [`Scheduler`](#audio-scheduler) class. But, other than the `Scheduler`, the `SimpleScheduler` class does not guarantee the order of events (*i.e.* calls to the `advanceTime` method of scheduled time engines and to scheduled callback functions) within a scheduling period (see `period` attribute).
+
+To get a unique instance of `SimpleScheduler` as the global scheduler of an application, the `getSimpleScheduler` factory function should be used. The function accepts an audio context as optional argument and uses the Waves default audio context (see [`Audio Context`](#audio-audio-context)) as default. The factory creates a single (simple) scheduler for each audio context.
+
+## Usage
 
 ~~~
-# to use as a standalone module
-$ npm install ircam-rnd/simple-scheduler
+var wavesAudio = require('waves-audio');
+var scheduler = wavesAudio.getSimpleScheduler();
+
+scheduler.add(myEngine);
 ~~~
 
-## Attributes
+## Example
 
-{% assign attribute = 'period' %}
-{% assign type = 'Number' %}
-{% assign default = '0.025' %}
-{% include includes/attribute.md %}
+This example shows three [`Metronome`](#audio-metronome) engines running in a `SimpleScheduler`.
 
-Value for setTimeout period.
-
-{% assign attribute = 'lookahead' %}
-{% assign type = 'Number' %}
-{% assign default = '0.1' %}
-{% include includes/attribute.md %}
-
-Lookahead time. Should be greater than the period attribute.
-
-## Methods
-
-{% assign method = 'currentTime' %}
-{% assign argument = '' %}
-{% assign type = '' %}
-{% assign return = 'Number' %}
-{% include includes/method.md %}
-
-Return current scheduler time including lookahead. 
-
-{% assign method = 'callback' %}
-{% assign argument = 'callbackFunction,time' %}
-{% assign type = 'Function,Number' %}
-{% assign default = ',this.currentTime' %}   
-{% assign return = 'Object' %}
-{% include includes/method.md %}
-
-Adds a callback to the scheduler at a specific time. Returns a scheduled engine object ment to be used for removal or reset.
-
-{% assign method = 'add' %}
-{% assign argument = 'engine,time,getCurrentPosition' %}
-{% assign type = 'Object,Number,Function' %}
-{% assign default = ',this.currentTime,null' %}   
-{% assign return = 'Object' %}
-{% include includes/method.md %}  
-
-Add a time engine to the scheduler at a specific time. The getCurrentPosition
-function is used as a callback to get the current position value.
-_Make sure the engine implements scheduled and that it hasn't already been added to the scheduler_.
-
-{% assign method = 'remove' %}
-{% assign argument = 'engine' %}
-{% assign type = 'Object' %}
-{% include includes/method.md %}
-
-Remove time engine or callback from the scheduler
-_Make sure the enging has already been added to the scheduler_.
-
-{% assign method = 'reset' %}
-{% assign argument = 'engine,time' %}
-{% assign type = 'Object,Number' %}
-{% include includes/method.md %}
-
-Reschedule a scheduled time engine or callback at a given time
-
-{% assign method = 'clear' %}
-{% include includes/method.md %}
-
-Remove all schdeduled callbacks and engines from the scheduler.
+<div id='simple-scheduler-container'></div>
+<script src="https://rawgit.com/wavesjs/audio/master/examples/simple-scheduler.js"></script>
+<a href="https://rawgit.com/wavesjs/audio/master/examples/simple-scheduler.js" target="_blank">[source code]</a>

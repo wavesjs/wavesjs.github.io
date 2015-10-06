@@ -6,9 +6,18 @@
 Used with a buffer to serve audio files.
 
 ~~~
-# to use as a standalone module
-$ npm install ircam-rnd/player-engine
+var wavesAudio = require('waves-audio');
+var playerEngine = wavesAudio.PlayerEngine();
+var playControl = new wavesAudio.PlayControl(playerEngine);
+
+playControl.start();
 ~~~
+
+##Example
+
+<div id='player-engine-container'></div>
+<script src="https://rawgit.com/wavesjs/audio/master/examples/player-engine.js"></script>
+<a href="https://rawgit.com/wavesjs/audio/master/examples/player-engine.js" target="_blank">[source code]</a>
 
 ## Attributes
 
@@ -32,6 +41,14 @@ The audio buffer. Default as the object passed in the constructor.
 {% include includes/attribute.md %}
 
 Fade time for chaining segments (e.g. in start, stop, and seek).
+
+{% assign attribute = 'wrapAroundExtension' %}
+{% assign type = 'Number' %}
+{% assign default = '0' %}
+{% include includes/attribute.md %}
+
+Portion at the end of the audio buffer that has been copied from the beginning to assure cyclic behavior.
+This attribute corresponds to the `wrapAroundExtension` option of the `load` method of the [`AudioBufferLoader`](http://wavesjs.github.io/loaders/#loaders-loaders-audiobufferloader) and [`SuperLoader`](http://wavesjs.github.io/loaders/#loaders-loaders-superloader)).
 
 {% assign attribute = 'outputNode' %}
 {% assign type = 'Number' %}

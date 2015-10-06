@@ -22,3 +22,5 @@ markdown: kramdown
 
 collections:
  - docs
+
+exclude: [vendor]

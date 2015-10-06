@@ -3,12 +3,29 @@
 ---
 # Scheduler
 
-The scheduler is a global singleton that allows for scheduling time-engines (see [TimeEngine](#audio-time-engine)) like the granular engine and the metronome as well as simple callback functions.
+The `Scheduler` class implements a master for time engines (see [`TimeEngine`](#audio-time-engine) or [`AudioTimeEngine`](#audio-audio-time-engine)) that implement the *scheduled* interface such as the [`Metronome`](#audio-metronome) and the [`GranularEngine`](#audio-granular-engine).
+A `Scheduler` can also schedule simple callback functions.
+The class is based on recursive calls to `setTimeOut` and uses the `audioContext.currentTime` as logical passed to the `advanceTime` methods of the scheduled engines or to the scheduled callback functions.
+It extends the [`SchedulingQueue`](#audio-scheduling-queue) class that itself includes a [`PriorityQueue`](#audio-priority-queue) to assure the order of the scheduled engines (see [`SimpleScheduler`](#audio-simple-scheduler) for a simplified scheduler implementation without `PriorityQueue`).
+
+To get a unique instance of `Scheduler` as the global scheduler of an application, the `getScheduler` factory function should be used. The function accepts an audio context as optional argument and uses the Waves default audio context (see [`Audio Context`](#audio-audio-context)) as default. The factory creates a single scheduler for each audio context.
+
+## Usage
 
 ~~~
-# to use as a standalone module
-$ npm install ircam-rnd/scheduler
+var wavesAudio = require('waves-audio');
+var scheduler = wavesAudio.getScheduler();
+
+scheduler.add(myEngine);
 ~~~
+
+## Example
+
+This example shows three [`Metronome`](#audio-metronome) engines running in a `Scheduler`.
+
+<div id='scheduler-container'></div>
+<script src="https://rawgit.com/wavesjs/audio/master/examples/scheduler.js"></script>
+<a href="https://rawgit.com/wavesjs/audio/master/examples/scheduler.js" target="_blank">[source code]</a>
 
 ## Attributes
 
@@ -24,7 +41,7 @@ Value for setTimeout period.
 {% assign default = '0.1' %}
 {% include includes/attribute.md %}
 
-Lookahead time. Should be greater than the period attribute.
+Lookahead time (>= period).
 
 ## Methods
 
@@ -36,45 +53,35 @@ Lookahead time. Should be greater than the period attribute.
 
 Returns scheduler current time including lookahead.
 
-{% assign method = 'callback' %}
-{% assign argument = 'callbackFunction,time' %}
-{% assign type = 'Function,Number' %}
-{% assign default = ',this.currentTime' %}   
-{% assign return = 'Object' %}
-{% include includes/method.md %}
-
-Adds a callback to the scheduler at a specific time. Returns a scheduled engine
-object ment to be used for removal or reset.
-
 {% assign method = 'add' %}
-{% assign argument = 'engine,time,getCurrentPosition' %}
-{% assign type = 'Object,Number,Function' %}
-{% assign default = ',this.currentTime,null' %}   
+{% assign argument = 'engineOrCallback,time' %}
+{% assign type = 'TimeEngine|Function,Number' %}
+{% assign default = ',this.currentTime' %}   
 {% assign return = 'Object' %}
 {% include includes/method.md %}  
 
-Add a time engine to the scheduler at a specific time. The getCurrentPosition
-function is used as a callback to get the current position value.
-
-_Make sure the engine implements scheduled and that it hasn't already been added to the scheduler_.
+Add a `TimeEngine` or a simple callback function to the scheduler at an optionally given time.
+Whether the `add` method is called with a `TimeEngine` or a callback function it returns a `TimeEngine` that can be used as argument of the methods `remove` and `resetEngineTime`.
+A `TimeEngine` added to a scheduler has to implement the *scheduled* interface.
+The callback function added to a scheduler will be called at the given time and with the given time as argument.
+The callback can return a new scheduling time (*i.e.* the next time when it will be called) or it can return `Infinity` to suspend scheduling without removing the function from the scheduler.
+A function that does not return a value (or returns `null` or `0`) is removed from the scheduler and cannot be used as argument of the methods `remove` and `resetEngineTime` anymore.
 
 {% assign method = 'remove' %}
 {% assign argument = 'engine' %}
 {% assign type = 'Object' %}
 {% include includes/method.md %}
 
-Remove time engine or callback from the scheduler
+Remove a `TimeEngine` from the scheduler that has been added to the scheduler using the `add` method.
 
-_Make sure the enging has already been added to the scheduler_.
-
-{% assign method = 'reset' %}
+{% assign method = 'resetEngineTime' %}
 {% assign argument = 'engine,time' %}
 {% assign type = 'Object,Number' %}
 {% include includes/method.md %}
 
-Reschedule a scheduled time engine or callback at a given time
+Reschedule a scheduled time engine at a given time.
 
 {% assign method = 'clear' %}
 {% include includes/method.md %}
 
-Remove all schdeduled callbacks and engines from the scheduler
+Remove all schdeduled callbacks and engines from the scheduler.

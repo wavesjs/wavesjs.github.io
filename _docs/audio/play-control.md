@@ -6,10 +6,21 @@
 
 Extends Time Engine to provide playback control of a Time Engine instance.
 
+##Usage
+
 ~~~
-# to use as a standalone module
-$ npm install ircam-rnd/play-control
+var wavesAudio = require('waves-audio');
+var playerEngine = wavesAudio.PlayerEngine();
+var playControl = new wavesAudio.PlayControl(playerEngine);
+
+playControl.start();
 ~~~
+
+##Example
+
+<div id='play-control-container'></div>
+<script src="https://rawgit.com/wavesjs/audio/master/examples/play-control.js"></script>
+<a href="https://rawgit.com/wavesjs/audio/master/examples/play-control.js" target="_blank">[source code]</a>
 
 ## Methods
 
