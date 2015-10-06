@@ -4,6 +4,8 @@ layout: default
 
 # UI
 
+**Warning**: this version will soon be deprecated
+
 The UI part of the `waves.js` librayr is build on top of [d3.js](http://d3js.org/), it provides a set of low level abstractions to visualize audio content using a data-driven approach.
 
 ## List of components
