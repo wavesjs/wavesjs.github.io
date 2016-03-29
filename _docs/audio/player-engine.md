@@ -13,11 +13,11 @@ var playControl = new wavesAudio.PlayControl(playerEngine);
 playControl.start();
 ~~~
 
-##Example
+## Example
 
-<div id='player-engine-container'></div>
-<script src="https://rawgit.com/wavesjs/audio/master/examples/player-engine.js"></script>
-<a href="https://rawgit.com/wavesjs/audio/master/examples/player-engine.js" target="_blank">[source code]</a>
+<a href="https://cdn.rawgit.com/wavesjs/audio/master/examples/player-engine.html" target="_blank">
+  https://cdn.rawgit.com/wavesjs/audio/master/examples/player-engine.html
+</a>
 
 ## Attributes
 

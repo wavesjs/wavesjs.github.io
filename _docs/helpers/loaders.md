@@ -8,7 +8,7 @@ AudioBuffer loader and other loader utilities module.
 
 ~~~
 # to use as a standalone module
-$ npm install ircam-rnd/loaders
+$ npm install wavesjs/loaders
 ~~~
 
 ## Example usage

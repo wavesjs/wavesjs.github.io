@@ -19,9 +19,9 @@ scheduler.add(granularEngine);
 
 This example shows a `GranularEngine` (with a few parameter controls) driven by a `Scheduler` and a `PlayControl`.
 
-<div id='granular-engine-container'></div>
-<script src="https://rawgit.com/wavesjs/audio/master/examples/granular-engine.js"></script>
-<a href="https://rawgit.com/wavesjs/audio/master/examples/granular-engine.js" target="_blank">[source code]</a>
+<a href="https://cdn.rawgit.com/wavesjs/audio/master/examples/granular-engine.html" target="_blank">
+  https://cdn.rawgit.com/wavesjs/audio/master/examples/granular-engine.html
+</a>
 
 ## Attributes
 

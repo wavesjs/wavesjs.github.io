@@ -6,7 +6,7 @@
 
 Provides synchronized scheduling of Time Engine instances.
 
-##Usage
+## Usage
 
 ~~~
 var wavesAudio = require('waves-audio');
@@ -21,11 +21,11 @@ transport.add(yourEngine);
 playControl.start();
 ~~~
 
-##Example
+## Example
 
-<div id='transport-container'></div>
-<script src="https://rawgit.com/wavesjs/audio/master/examples/transport.js"></script>
-<a href="https://rawgit.com/wavesjs/audio/master/examples/transport.js" target="_blank">[source code]</a>
+<a href="https://cdn.rawgit.com/wavesjs/audio/master/examples/transport.html" target="_blank">
+  https://cdn.rawgit.com/wavesjs/audio/master/examples/transport.html
+</a>
 
 ## Methods
 

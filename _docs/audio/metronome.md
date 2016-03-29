@@ -5,7 +5,7 @@
 
 Metronome audio engine. It extends Time Engine as a transported interface.
 
-##Usage
+## Usage
 
 ~~~
 var wavesAudio = require('waves-audio');
@@ -15,11 +15,12 @@ var metronome = new wavesAudio.Metronome({period: 0.333});
 scheduler.add(metronome);
 ~~~
 
-##Example
+## Example
 
-<div id='metronome-container'></div>
-<script src="https://rawgit.com/wavesjs/audio/master/examples/metronome.js"></script>
-<a href="https://rawgit.com/wavesjs/audio/master/examples/metronome.js" target="_blank">[source code]</a>
+<a href="https://cdn.rawgit.com/wavesjs/audio/master/examples/metronome.html" target="_blank">
+  https://cdn.rawgit.com/wavesjs/audio/master/examples/metronome.html
+</a>
+
 
 ## Attributes
 

@@ -17,16 +17,15 @@
       </header>
 
       {% for doc in site.docs %}
-
         {% assign p = doc.relative_path | split:"/" %}
         {% assign category = p[1] %}
-        {% assign categoryTest = category | prepend:"/" %}
+        {% assign categoryTest = category | prepend:"/" | append:"/" %}
 
-          {% if page.dir == categoryTest %}
-            <section class="class-definition {{ category }}" data-category="{{ category }}">
-              {{ doc.content }}
-            </section>
-          {% endif %}
+        {% if page.dir == categoryTest %}
+          <section class="class-definition {{ category }}" data-category="{{ category }}">
+            {{ doc.content }}
+          </section>
+        {% endif %}
 
       {% endfor %}
     </div>

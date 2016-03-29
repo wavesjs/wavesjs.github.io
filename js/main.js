@@ -33,7 +33,7 @@ var DocView = Backbone.View.extend({
     var type, inherited, namespace;
 
     this.$(selector.join(', ')).each(_.bind(function(index, el) {
-      var text = el.innerHTML.replace(/<code>.*$/, '');
+      var text = el.innerHTML.replace(/\<code(.*)$/, '');
       text = text.replace('.', '');
       text = _.string.trim(text);
       var slugyfied = _.string.slugify(text);

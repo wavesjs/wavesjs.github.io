@@ -6,7 +6,7 @@
 
 Extends Time Engine to provide playback control of a Time Engine instance.
 
-##Usage
+## Usage
 
 ~~~
 var wavesAudio = require('waves-audio');
@@ -16,11 +16,12 @@ var playControl = new wavesAudio.PlayControl(playerEngine);
 playControl.start();
 ~~~
 
-##Example
+## Example
 
-<div id='play-control-container'></div>
-<script src="https://rawgit.com/wavesjs/audio/master/examples/play-control.js"></script>
-<a href="https://rawgit.com/wavesjs/audio/master/examples/play-control.js" target="_blank">[source code]</a>
+<a href="https://cdn.rawgit.com/wavesjs/audio/master/examples/play-control.html" target="_blank">
+  https://cdn.rawgit.com/wavesjs/audio/master/examples/play-control.html
+</a>
+
 
 ## Methods
 
